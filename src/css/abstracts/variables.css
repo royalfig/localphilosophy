@@ -1,6 +1,7 @@
 :root {
-  --f-family: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
+  --f-system: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
     oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --f-heading: 'Simonetta', serif;
   --h1: 2rem;
   --h2: 1.7411rem;
   --h3: 1.5157rem;
@@ -10,6 +11,26 @@
   --small: 0.8706rem;
 
   --gap: 1rem;
+  --button-padding: 0.5em 1em;
+  --transition: 0.3s;
+
+  --width: 1200px;
+
+  --c-primary: #155e75;
+  --c-light: #0e7490;
+  --c-dark: #164e63;
+
+  --c-50: #f4f4f5;
+  --c-200: #e4e4e7;
+  --c-300: #d4d4d8;
+  --c-400: #a1a1aa;
+  --c-500: #71717a;
+  --c-600: #52525b;
+  --c-700: #3f3f46;
+  --c-800: #27272a;
+  --c-900: #18181b;
+
+  --radius: 8px;
 }
 
 @media (min-width: 576px) {

@@ -1,7 +1,9 @@
 .grid,
 .post {
   display: grid;
-  grid-template-columns: var(--gap) 1fr minmax(100px, 992px) 1fr var(--gap);
+  grid-template-columns: var(--gap) 1fr minmax(100px, var(--width)) 1fr var(
+      --gap
+    );
 }
 
 .grid > *,

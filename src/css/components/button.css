@@ -1,1 +1,16 @@
 /* You would enter button styles here */
+.lp-button {
+  padding: var(--button-padding);
+  font-family: var(--f-system);
+  font-size: var(--small);
+  line-height: 1;
+  color: #fff;
+  background-color: var(--primary);
+  border: none;
+  border-radius: var(--radius);
+  transition: background-color var(--transition);
+}
+
+.lp-button:hover {
+  background-color: var(--light);
+}

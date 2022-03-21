@@ -5,6 +5,7 @@ h4,
 h5,
 h6 {
   margin: 1.5em 0 0.5em;
+  font-family: var(--f-heading);
   line-height: 1.3;
 }
 
