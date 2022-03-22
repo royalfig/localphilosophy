@@ -1,0 +1,49 @@
+.lp-navbar {
+  display: grid;
+  grid-template-columns: minmax(25%, 1fr) auto minmax(25%, 1fr);
+  margin: 0 auto;
+  max-width: var(--width);
+  width: 100%;
+  padding: 1rem 0;
+  align-items: center;
+}
+
+.lp-navbar__left {
+}
+
+.lp-navbar__center {
+  grid-column: 2 / 3;
+}
+
+.lp-navbar__center--top {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--f-heading);
+}
+
+.lp-navbar__center--bottom {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+}
+
+.lp-logo-marker {
+  border: 3px solid var(--c-primary);
+  border-radius: 50%;
+  margin: 0 5px;
+  box-sizing: content-box;
+  padding: 0.15em;
+}
+
+.lp-logo-marker svg {
+  height: 2rem;
+  width: 2rem;
+  fill: var(--c-primary);
+  display: block;
+}
+
+.lp-navbar__right {
+  justify-self: end;
+}

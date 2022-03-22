@@ -1,0 +1,40 @@
+.lp-card {
+  position: relative;
+}
+
+.lp-card::after {
+  background-image: linear-gradient(to bottom, transparent, rgba(0 0 0 / 0.9));
+}
+
+.lp-card__title {
+}
+
+.lp-card__meta-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lp-card__author-date-container {
+}
+
+.lp-card__author-date-container > p {
+  font-size: var(--small);
+  color: var(--200);
+}
+
+.lp-card__author-date-container > p:first-child {
+  margin-right: 1rem;
+}
+
+.lp-card__author {
+}
+
+.lp-card__author-avatar,
+.lp-card__icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  border-radius: 50%;
+  object-fit: cover;
+}

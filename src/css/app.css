@@ -7,6 +7,12 @@
 @import './base/typography.css';
 @import './base/grid.css';
 
+/* Components */
+@import './components/navbar.css';
+@import './components/button.css';
+@import './components/border.css';
+@import './components/menu.css';
+
 /* Layout */
 @import './layout/navigation.css';
 @import './layout/header.css';

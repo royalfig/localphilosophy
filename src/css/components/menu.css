@@ -1,0 +1,62 @@
+.lp-overlay {
+  position: fixed;
+  background-color: rgba(0 0 0 / 0.95);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.1s;
+  pointer-events: none;
+}
+
+.lp-overlay .lp-button {
+  float: right;
+}
+
+.lp-overlay .lp-button--icon svg {
+  fill: #fff;
+}
+.lp-overlay .lp-button--icon:hover svg {
+  fill: var(--c-light);
+}
+
+.lp-menu {
+  height: 100%;
+  width: 50%;
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-out 0s;
+}
+
+.lp-menu a {
+  text-decoration: none;
+}
+
+.lp-menu a:hover {
+  color: var(--c-primary);
+}
+
+.lp-menu__title {
+  font-family: var(--f-heading);
+  font-weight: 700;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.lp-overlay[aria-expanded='true'] {
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.4s ease 0s;
+}
+
+.lp-overlay[aria-expanded='true'] .lp-menu {
+  transform: translateX(0);
+  transition: transform 0.2s ease-in 0.1s;
+}

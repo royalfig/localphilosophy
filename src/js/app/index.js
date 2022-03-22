@@ -9,3 +9,20 @@ if (ENV === 'development') {
   document.head.append(script);
   console.log('Reload script added');
 }
+
+// Menu
+const closeMenu = document.querySelector('#close-menu');
+const menu = document.querySelector('#menu');
+const overlay = document.querySelector('.lp-overlay');
+menu.addEventListener('click', (e) => {
+  overlay.setAttribute('aria-expanded', true);
+});
+
+closeMenu.addEventListener('click', (e) => {
+  overlay.setAttribute('aria-expanded', false);
+});
+
+overlay.addEventListener('click', (e) => {
+  if (e.target.classList.contains('lp-overlay'))
+    overlay.setAttribute('aria-expanded', false);
+});

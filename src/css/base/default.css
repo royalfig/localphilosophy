@@ -1,5 +1,5 @@
 html {
-  font-family: var(--f-family);
+  font-family: var(--f-body);
   font-size: 1rem;
   font-size: clamp(
     1rem,

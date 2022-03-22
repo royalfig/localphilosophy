@@ -1,0 +1,9 @@
+.lp-border {
+  border-color: var(--c-200);
+  width: 100%;
+  border-width: 1px;
+}
+
+.lp-border-bottom {
+  border-bottom-style: solid;
+}

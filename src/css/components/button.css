@@ -9,8 +9,27 @@
   border: none;
   border-radius: var(--radius);
   transition: background-color var(--transition);
+  cursor: pointer;
 }
 
 .lp-button:hover {
   background-color: var(--light);
+}
+.lp-button--icon {
+  height: 2rem;
+  width: 2rem;
+  box-sizing: content-box;
+  padding: 0.5rem;
+}
+
+.lp-button--icon:hover svg {
+  fill: var(--c-primary);
+}
+
+.lp-button--icon svg {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  fill: var(--c-800);
+  transition: fill var(--transition);
 }
