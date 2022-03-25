@@ -7,3 +7,7 @@
 .lp-border-bottom {
   border-bottom-style: solid;
 }
+
+.lp-border-left {
+  border-left-style: solid;
+}

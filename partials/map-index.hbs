@@ -1,0 +1,92 @@
+{{#contentFor 'scripts'}}
+  <link
+    rel='stylesheet'
+    href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css'
+    integrity='sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=='
+    crossorigin=''
+  />
+
+{{/contentFor}}
+
+<div class='lp-home-map-wrapper lp-border lp-border-bottom'>
+  <div class='lp-home-map-middle'>
+    <div class='lp-home-map' id='map'></div>
+
+    <div class='lp-places lp-border lp-border-left'>
+      {{#get 'tags' include='count.posts' order='count.posts desc' limit='4'}}
+        {{#foreach tags}}
+          <div class='lp-place lp-border lp-border-bottom'><a href='{{url}}'>
+              {{name}}</a></div>
+        {{/foreach}}
+      
+
+      <div class='lp-place'><a href='#'>More Places &rarr;</a></div>
+    </div>
+  </div>
+  <div class='lp-home-map-right lp-places'>
+    {{#foreach tags}}
+    <div class='lp-place lp-border lp-border-bottom'></div>
+{{/foreach}}
+    <div class='lp-place'></div>
+  </div>
+</div>
+{{/get}}
+{{#contentFor 'foot'}}
+  <script
+    src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js'
+    integrity='sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=='
+    crossorigin=''
+  ></script>
+  <script
+    src='https://unpkg.com/@tryghost/content-api@1.7.2/umd/content-api.min.js'
+  ></script>
+  <script>
+
+    const api = new GhostContentAPI({ key: '385060693c5636655f296c5de0',
+    version: 'v4', url: 'http://localhost:2368', }); api.posts.browse({ include:
+    'tags,authors' }).then((posts) => { 
+      
+      const mapData = posts.map(postData => {
+
+        const {title,url,feature_image,id,published_at,authors,tags} = postData;
+
+        const [location,gc] = tags;
+
+        const coords = locationParser(gc.name);
+return {title,url,feature_image,id,published_at,location_name:location.name, location_slug: location.url,coords}
+
+
+      })
+      console.log(mapData)
+      
+      
+      
+      
+      var map =
+    L.map('map').setView(mapData[0].coords, 12); const ACCESS_TOKEN =
+    'pk.eyJ1Ijoicm95YWxmaWciLCJhIjoiY2t6M2Z2NzdpMDZlODJwbXpxbWF3ZWRybCJ9._5YW-t0-6Nfn_fav0TO8eg';
+    L.tileLayer(
+    `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${ACCESS_TOKEN}`,
+    { attribution: `Map data &copy; <a
+    href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
+    contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>`,
+    maxZoom: 20, id: 'mapbox/cjerxnqt3cgvp2rmyuxbeqme7', tileSize: 512,
+    zoomOffset: -1, }, ).addTo(map);
+    mapData.forEach((location) => {
+  const m = L.marker(location.coords).addTo(map);
+  m.bindPopup(
+    `<h2>${location.title}</h2><img class="map-img" src="${location.feature_image}">`
+  );
+});
+  });
+
+    function locationParser(input) {
+      console.log(input)
+  const locationWithoutPrefix = input.substring(3);
+  const locationSplitOnComma = locationWithoutPrefix.split(",");
+  const [first,second] = locationSplitOnComma;
+  return [+first,+second];
+  
+}
+  </script>
+{{/contentFor}}

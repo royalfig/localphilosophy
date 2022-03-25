@@ -8,6 +8,7 @@
   opacity: 0;
   transition: opacity 0.4s ease 0.1s;
   pointer-events: none;
+  z-index: 1001;
 }
 
 .lp-overlay .lp-button {

@@ -12,6 +12,7 @@
 @import './components/button.css';
 @import './components/border.css';
 @import './components/menu.css';
+@import './components/map.css';
 
 /* Layout */
 @import './layout/navigation.css';
