@@ -34,7 +34,7 @@ const map = posts.then((data) => {
     };
   });
 
-  const map = L.map('map').setView(mapData[0].coords, 14);
+  const map = L.map('map').setView(mapData[0].coords, 13);
 
   map.on('click', () => {
     setCurrent(null);
@@ -49,7 +49,7 @@ const map = posts.then((data) => {
       attribution: `Map data &copy; <a
   href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
   contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>`,
-      maxZoom: 20,
+      maxZoom: 18,
       id: 'mapbox/cjerxnqt3cgvp2rmyuxbeqme7',
       tileSize: 512,
       zoomOffset: -1,
@@ -73,15 +73,13 @@ const map = posts.then((data) => {
     m.bindPopup(
       `<div class="lp-popup-content">
       <figure class="lp-popup-figure">
-        <img src="${createFeatureImageSize(location.feature_image)}" alt="">
+        <img src="${location.feature_image}" alt="">
       </figure>
       <div class="lp-popup-text">
         <h2>${location.title}</h2>
         <div class="lp-popup-meta">
         ${authors}
-        <a href="${
-          location.url
-        }"><svg viewBox="0 0 24 24" ><path fill="none" d="M0 0h24v24H0z"/><path d="M12 11V8l4 4-4 4v-3H8v-2h4zm0-9c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 18c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8z" fill="currentColor"/></svg></a>
+        <a href="${location.url}"><svg viewBox="0 0 24 24" ><path fill="none" d="M0 0h24v24H0z"/><path d="M12 11V8l4 4-4 4v-3H8v-2h4zm0-9c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 18c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8z" fill="currentColor"/></svg></a>
         </div>
       </div>
       </div>`,

@@ -1,6 +1,6 @@
 .lp-border {
-  border-color: var(--c-50);
   width: 100%;
+  border-color: var(--c-50);
   border-width: 1px;
 }
 
