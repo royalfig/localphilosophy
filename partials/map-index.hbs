@@ -1,14 +1,20 @@
 {{#contentFor 'scripts'}}
-  <link
+  <!-- <link
     rel='stylesheet'
     href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css'
     integrity='sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=='
     crossorigin=''
-  />
+  /> -->
 
 {{/contentFor}}
 
-<div class='lp-home-map-wrapper lp-border lp-border-bottom'>
+<div style="display:none">
+  <img data-map-pin  src="{{asset 'images/map-pin.png' }}" >
+  <img data-map-pin-shadow  src="{{asset 'images/map-pin-shadow.png' }}" >
+
+</div>
+
+<section class='lp-home-map-wrapper lp-border lp-border-bottom'>
   <div class='lp-home-map-middle'>
     <div class='lp-home-map' id='map'></div>
 
@@ -29,10 +35,44 @@
 {{/foreach}}
     <div class='lp-place'></div>
   </div>
-</div>
+</section>
 {{/get}}
+
+<div class="lp-home-card-container">
+{{#foreach posts}}
+
+<article class="lp-home-card" id="{{slug}}" style="background-image: url({{img_url feature_image size="m"}}) ">
+<header class="lp-home-card__header">
+  <p class="lp-home-card__location">
+    {{primary_tag.name}}
+  </p>
+</header>
+<div>
+  <div class="lp-home-card__body">
+    <h2>{{title}}</h2>
+  </div>
+  <footer>
+    <div class="lp-home-card__authors">
+      {{#foreach authors}}
+        <div class="lp-author">
+          <img src="{{img_url profile_image size="s"}}" alt="{{name}}">
+          <p>{{name}}</p>
+        </div>
+      {{/foreach}}
+    </div>
+    <a href="{{url}}">
+      <svg viewBox="0 0 24 24" ><path fill="none" d="M0 0h24v24H0z"/><path d="M12 11V8l4 4-4 4v-3H8v-2h4zm0-9c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 18c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8z" fill="currentColor" /></svg>
+    </a>
+  </footer>
+</div>
+
+</article>
+
+{{/foreach}}
+</div>
+
 {{#contentFor 'foot'}}
-  <script
+  <!-- <script
     src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js'
     integrity='sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=='
     crossorigin=''
@@ -40,53 +80,11 @@
   <script
     src='https://unpkg.com/@tryghost/content-api@1.7.2/umd/content-api.min.js'
   ></script>
-  <script>
+  <script> -->
 
-    const api = new GhostContentAPI({ key: '385060693c5636655f296c5de0',
-    version: 'v4', url: 'http://localhost:2368', }); api.posts.browse({ include:
-    'tags,authors' }).then((posts) => { 
-      
-      const mapData = posts.map(postData => {
-
-        const {title,url,feature_image,id,published_at,authors,tags} = postData;
-
-        const [location,gc] = tags;
-
-        const coords = locationParser(gc.name);
-return {title,url,feature_image,id,published_at,location_name:location.name, location_slug: location.url,coords}
-
-
-      })
-      console.log(mapData)
-      
-      
-      
-      
-      var map =
-    L.map('map').setView(mapData[0].coords, 12); const ACCESS_TOKEN =
-    'pk.eyJ1Ijoicm95YWxmaWciLCJhIjoiY2t6M2Z2NzdpMDZlODJwbXpxbWF3ZWRybCJ9._5YW-t0-6Nfn_fav0TO8eg';
-    L.tileLayer(
-    `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${ACCESS_TOKEN}`,
-    { attribution: `Map data &copy; <a
-    href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
-    contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>`,
-    maxZoom: 20, id: 'mapbox/cjerxnqt3cgvp2rmyuxbeqme7', tileSize: 512,
-    zoomOffset: -1, }, ).addTo(map);
-    mapData.forEach((location) => {
-  const m = L.marker(location.coords).addTo(map);
-  m.bindPopup(
-    `<h2>${location.title}</h2><img class="map-img" src="${location.feature_image}">`
-  );
-});
-  });
-
-    function locationParser(input) {
-      console.log(input)
-  const locationWithoutPrefix = input.substring(3);
-  const locationSplitOnComma = locationWithoutPrefix.split(",");
-  const [first,second] = locationSplitOnComma;
-  return [+first,+second];
-  
-}
+    
+     
   </script>
 {{/contentFor}}
+
+

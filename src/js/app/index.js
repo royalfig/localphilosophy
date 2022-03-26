@@ -1,5 +1,7 @@
 import '../../css/app.css';
 
+import test from './map';
+
 // LiveReload server
 if (ENV === 'development') {
   const script = document.createElement('script');

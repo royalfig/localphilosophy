@@ -8,42 +8,76 @@
   align-items: center;
 }
 
-.lp-navbar__left {
+.lp-navbar__left button {
+  padding-left: 0;
 }
 
 .lp-navbar__center {
   grid-column: 2 / 3;
 }
 
+.lp-navbar__center p {
+  font-family: var(--f-heading);
+  font-size: 2rem;
+}
 .lp-navbar__center--top {
   display: flex;
+  gap: 5px;
+  align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  font-weight: 700;
-  font-family: var(--f-heading);
+}
+.lp-local {
+  grid-area: left-top;
+}
+
+.lp-logo-marker {
+  grid-area: center-top;
+}
+
+.lp-philosophy {
+  grid-area: right-top;
+}
+
+.lp-navbar__center--bottom {
+  grid-area: center-bottom;
+
+  justify-self: center;
+}
+
+.lp-navbar-hidden-logo {
+  color: transparent;
 }
 
 .lp-navbar__center--bottom {
   text-align: center;
-  font-size: 0.8rem;
   margin-top: 0.15rem;
+}
+
+.lp-navbar__center--bottom p {
+  font-family: var(--f-body);
+  font-size: var(--small);
+  font-style: italic;
 }
 
 .lp-logo-marker {
   border: 3px solid var(--c-primary);
   border-radius: 50%;
-  margin: 0 5px;
   box-sizing: content-box;
   padding: 0.15em;
+  width: 2rem;
+  height: 2rem;
 }
 
 .lp-logo-marker svg {
-  height: 2rem;
-  width: 2rem;
+  height: 100%;
+  width: 100%;
   fill: var(--c-primary);
   display: block;
 }
 
 .lp-navbar__right {
   justify-self: end;
+}
+.lp-navbar__right button {
+  padding-right: 0;
 }
