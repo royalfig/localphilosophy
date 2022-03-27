@@ -14,6 +14,11 @@
 
 .lp-navbar__center {
   grid-column: 2 / 3;
+  height: 5.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
 .lp-navbar__center p {
@@ -21,13 +26,23 @@
   font-size: 2rem;
 }
 .lp-navbar__center--top {
-  display: flex;
+  display: grid;
   gap: 5px;
   align-items: center;
   justify-content: center;
+  grid-template-areas:
+    'left-top center-top right-top'
+    '. center-bottom .';
+  grid-template-columns: 1fr min-content 1fr;
 }
+
+.lp-post .lp-navbar__center--top {
+  color: var(--c-50);
+}
+
 .lp-local {
   grid-area: left-top;
+  justify-self: end;
 }
 
 .lp-logo-marker {
@@ -39,24 +54,23 @@
 }
 
 .lp-navbar__center--bottom {
-  grid-area: center-bottom;
-
-  justify-self: center;
+  text-align: right;
+  margin-top: 0.15rem;
+  align-self: flex-end;
 }
 
 .lp-navbar-hidden-logo {
   color: transparent;
 }
 
-.lp-navbar__center--bottom {
-  margin-top: 0.15rem;
-  text-align: center;
-}
-
 .lp-navbar__center--bottom p {
   font-family: var(--f-body);
   font-size: var(--small);
   font-style: italic;
+}
+
+.lp-post .lp-navbar__center--bottom p {
+  color: var(--c-100);
 }
 
 .lp-logo-marker {
@@ -68,11 +82,23 @@
   border-radius: 50%;
 }
 
+.lp-post .lp-logo-marker {
+  border-color: var(--c-light);
+}
+
+.lp-post .lp-button--icon svg {
+  fill: var(--c-50);
+}
+
 .lp-logo-marker svg {
   display: block;
   width: 100%;
   height: 100%;
   fill: var(--c-primary);
+}
+
+.lp-post .lp-logo-marker {
+  fill: var(--c-light);
 }
 
 .lp-navbar__right {

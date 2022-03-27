@@ -3,3 +3,49 @@
 .post {
   margin-block-end: 3rem;
 }
+
+.lp-post__header {
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+.lp-post__header h1 {
+  color: var(--c-50);
+  text-align: center;
+}
+
+.lp-post__author {
+  color: var(--c-100);
+}
+
+.lp-post__author .lp-author {
+  justify-content: center;
+}
+
+.lp-post__meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--c-100);
+  gap: 1rem;
+  font-size: var(--small);
+  margin-top: 1rem;
+}
+
+.lp-post__excerpt {
+  margin-top: 1rem;
+  color: var(--c-200);
+  text-align: center;
+}
+
+/* Content */
+.lp-post__content {
+  display: grid;
+  grid-template-columns: var(--gap) 1fr 2rem 1rem var(--content) 1rem 2rem 1fr var(
+      --gap
+    );
+}
+
+.lp-post__content > * {
+  grid-column: 5 / 6;
+}

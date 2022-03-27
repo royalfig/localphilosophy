@@ -16,6 +16,7 @@
   --transition: 0.3s;
 
   --width: 1200px;
+  --content: 720px;
 
   --c-primary: rgb(0, 189, 214);
   --c-light: #62efff;
@@ -50,9 +51,9 @@
   --linear-up: linear-gradient(
     0deg,
     hsla(var(--hsl-900), 1) 0%,
-    hsla(var(--hsl-900), 0.85) 15%,
-    hsla(var(--hsl-900), 0.25) 35%,
-    hsla(var(--hsl-900), 0) 60%
+    hsla(var(--hsl-900), 0.85) 25%,
+    hsla(var(--hsl-900), 0.45) 55%,
+    hsla(var(--hsl-900), 0) 90%
   );
 
   --radius: 8px;
@@ -62,11 +63,5 @@
 @media (min-width: 576px) {
   :root {
     --gap: 2rem;
-  }
-}
-
-@media (min-width: 992px) {
-  :root {
-    --gap: 3rem;
   }
 }

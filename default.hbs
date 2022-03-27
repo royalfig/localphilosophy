@@ -23,7 +23,16 @@
 
     <body class="{{body_class}}">
         
-        <div class="grid lp-border lp-border-bottom">
+        {{#is "post"}}
+
+        <div class="lp-bg">
+        {{{block "bg"}}}
+
+        </div>
+
+{{/is}}
+
+        <div class="grid lp-border lp-border-bottom {{#is "post"}}lp-post{{/is}}">
             {{!-- Navbar partial --}}
             {{> "navbar"}}
         </div>

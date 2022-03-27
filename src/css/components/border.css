@@ -4,6 +4,10 @@
   border-width: 1px;
 }
 
+.lp-post.lp-border {
+  border-color: transparent;
+}
+
 .lp-border-bottom {
   border-bottom-style: solid;
 }

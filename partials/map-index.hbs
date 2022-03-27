@@ -13,7 +13,7 @@
   <img data-map-pin-shadow  src="{{asset 'images/map-pin-shadow.png' }}" >
 </div>
 
-<section class='lp-home-map-wrapper lp-border lp-border-bottom'>
+<section class='lp-home-map-wrapper lp-border lp-border-bottom grid'>
   <div class='lp-home-map-middle'>
     <div class='lp-home-map' id='map'></div>
 
@@ -24,6 +24,8 @@
               {{name}}</a></div>
         {{/foreach}}
       
+      <div class='lp-place lp-border lp-border-bottom'><a href='#'>Maine</a></div>
+      <div class='lp-place lp-border lp-border-bottom'><a href='#'>Two</a></div>
 
       <div class='lp-place'><a href='#'>More Places &rarr;</a></div>
     </div>
@@ -32,12 +34,14 @@
     {{#foreach tags}}
     <div class='lp-place lp-border lp-border-bottom'></div>
 {{/foreach}}
+    <div class='lp-place lp-border lp-border-bottom'></div>
+    <div class='lp-place lp-border lp-border-bottom'></div>
     <div class='lp-place'></div>
   </div>
 </section>
 {{/get}}
 
-<div class="lp-home-card-container">
+<div class="lp-home-card-container lp-border lp-border-bottom">
 {{#foreach posts}}
 
 <article class="lp-home-card" id="{{slug}}" style="background-image: url({{img_url feature_image size="m"}}) ">
@@ -67,14 +71,18 @@
     </div>
   </section>
   <section class="lp-home-card--back">
-    <h2>{{title}}</h2>
     <p>{{excerpt}}</p>
-    <a href="{{url}}" class="lp-button">Read</a>
+    <a class="lp-home-card__read" href="{{url}}" class="lp-button">Read</a>
   </section>
 </article>
 
 {{/foreach}}
 </div>
+
+<section>
+<p>Call to Action </p>
+
+</section>
 
 {{#contentFor 'foot'}}
   <!-- <script

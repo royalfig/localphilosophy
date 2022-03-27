@@ -1,21 +1,20 @@
 .lp-home-map-wrapper {
   display: grid;
-  grid-template-columns: 1fr var(--width) 1fr;
-}
-
-.lp-home-map {
-  height: 60vh;
-  margin: 1rem 1rem 1rem 0;
 }
 
 .lp-home-map-middle {
-  grid-column: 2 / 3;
+  grid-column: 3 / 4;
   display: grid;
   grid-template-columns: 75% 1fr;
 }
 
+.lp-home-map {
+  height: calc((100vh - 11.125rem) * 0.6);
+  margin: 1rem 1rem 1rem 0;
+}
+
 .lp-home-map-right {
-  grid-column: 3;
+  grid-column: 5;
 }
 
 .lp-places {
