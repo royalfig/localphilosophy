@@ -3,6 +3,7 @@
     oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --f-heading: 'Playfair Display', serif;
   --f-body: 'Chivo', serif;
+  --f-logo: 'Playfair Display';
   --h1: 2rem;
   --h2: 1.7411rem;
   --h3: 1.5157rem;
@@ -18,7 +19,7 @@
   --width: 1200px;
   --content: 720px;
 
-  --c-primary: rgb(0, 189, 214);
+  --c-primary: #00bdd6;
   --c-light: #62efff;
   --c-dark: #008ba3;
   --c-secondary: #ff9800;

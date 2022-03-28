@@ -1,16 +1,6 @@
-.lp-home-map-wrapper {
-  display: grid;
-}
-
-.lp-home-map-middle {
-  grid-column: 3 / 4;
-  display: grid;
-  grid-template-columns: 75% 1fr;
-}
-
 .lp-home-map {
-  height: calc((100vh - 11.125rem) * 0.6);
-  margin: 1rem 1rem 1rem 0;
+  height: calc((100vh - (4.25rem + 4rem)) * 0.6);
+  margin: 1rem 0;
 }
 
 .lp-home-map-right {

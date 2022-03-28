@@ -2,10 +2,10 @@
   width: 100%;
   margin-top: 1rem;
   list-style-type: none;
+  border-bottom: 1px solid var(--c-50);
 }
 
 .nav li {
-  padding-bottom: 2rem;
-  font-size: clamp(1rem, 4rem, 75vw);
-  border-bottom: 1px solid var(--c-200);
+  padding-bottom: 1rem;
+  font-size: 1rem;
 }

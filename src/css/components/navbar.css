@@ -6,6 +6,7 @@
   padding: 1rem 0;
   margin: 0 auto;
   grid-template-columns: minmax(25%, 1fr) auto minmax(25%, 1fr);
+  height: 4.25rem;
 }
 
 .lp-navbar__left button {
@@ -14,59 +15,39 @@
 
 .lp-navbar__center {
   grid-column: 2 / 3;
-  height: 5.125rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  text-align: center;
 }
 
-.lp-navbar__center p {
-  font-family: var(--f-heading);
-  font-size: 2rem;
+.lp-navbar__center p,
+.lp-navbar__center h1 {
+  font-family: var(--f-logo);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.25rem;
+  margin: 0;
 }
 .lp-navbar__center--top {
-  display: grid;
-  gap: 5px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  grid-template-areas:
-    'left-top center-top right-top'
-    '. center-bottom .';
-  grid-template-columns: 1fr min-content 1fr;
 }
 
 .lp-post .lp-navbar__center--top {
-  color: var(--c-50);
-}
-
-.lp-local {
-  grid-area: left-top;
-  justify-self: end;
-}
-
-.lp-logo-marker {
-  grid-area: center-top;
-}
-
-.lp-philosophy {
-  grid-area: right-top;
+  color: #fff;
 }
 
 .lp-navbar__center--bottom {
-  text-align: right;
   margin-top: 0.15rem;
-  align-self: flex-end;
-}
-
-.lp-navbar-hidden-logo {
-  color: transparent;
 }
 
 .lp-navbar__center--bottom p {
   font-family: var(--f-body);
   font-size: var(--small);
   font-style: italic;
+  line-height: 1.2;
 }
 
 .lp-post .lp-navbar__center--bottom p {

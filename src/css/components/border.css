@@ -5,7 +5,7 @@
 }
 
 .lp-post.lp-border {
-  border-color: transparent;
+  border-color: var(--c-500);
 }
 
 .lp-border-bottom {

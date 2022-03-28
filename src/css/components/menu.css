@@ -23,20 +23,17 @@
 }
 
 .lp-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 50%;
   height: 100%;
-  text-align: center;
   background-color: #fff;
   transition: transform 0.2s ease-out 0s;
   transform: translateX(-100%);
+  padding: var(--gap) 0;
 }
 
 .lp-menu a {
   text-decoration: none;
+  padding: 0 var(--gap);
 }
 
 .lp-menu a:hover {
@@ -44,11 +41,17 @@
 }
 
 .lp-menu__title {
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
   font-family: var(--f-heading);
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.lp-menu__title + p {
+  line-height: 1.2;
+  color: var(--c-700);
+  margin-bottom: 1rem;
+  padding: 0 var(--gap);
 }
 
 .lp-overlay[aria-expanded='true'] {

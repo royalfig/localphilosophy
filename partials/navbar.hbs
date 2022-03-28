@@ -9,8 +9,11 @@
   <div class='lp-navbar__center'>
     <div class='lp-navbar__center--top'>
 
-      {{#is 'home'}}<h1 hidden aria-hidden='true'>Local Philosophy</h1>{{/is}}
-      <p class='lp-local'>Local</p>
+      {{#is 'home'}}<h1>Local Philosophy</h1>
+      {{else}}<p>Local Philosophy</p>
+      {{/is}}
+
+      {{! <p class='lp-local'>Local</p>
 
       <div class='lp-logo-marker'>
         <svg viewBox='0 0 24 24'><path
@@ -21,11 +24,13 @@
           ></path></svg>
       </div>
 
-      <p class='lp-philosophy'>Philosophy</p>
+      <p class='lp-philosophy'>Philosophy</p> }}
     </div>
-    <div class='lp-navbar__center--bottom'>
-      <p> Our ideas come from somewhere.</p><p>Here are some of the places.</p>
-    </div>
+    {{!-- {{#is 'home'}}
+      <div class='lp-navbar__center--bottom'>
+        <p> Our ideas come from somewhere.</p><p>Here are some of the places.</p>
+      </div>
+    {{/is}} --}}
   </div>
 
   <div class='lp-navbar__right'>
