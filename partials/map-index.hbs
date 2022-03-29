@@ -41,42 +41,46 @@
 </section>
 {{/get}} --}}
 </section>
-<div class="lp-home-card-container lp-border lp-border-bottom">
-{{#foreach posts}}
 
-<article class="lp-home-card" id="{{slug}}" style="background-image: url({{img_url feature_image size="m"}}) ">
-  <section class="lp-home-card--front">
-    <header class="lp-home-card__header">
-      <p class="lp-home-card__location">
-        {{primary_tag.name}}
-      </p>
-    </header>
-    <div>
-      <div class="lp-home-card__body">
-        <h2>{{title}}</h2>
-      </div>
-      <footer>
-        <div class="lp-home-card__authors">
-          {{#foreach authors}}
-            <div class="lp-author">
-              <img src="{{img_url profile_image size="s"}}" alt="{{name}}">
-              <p>{{name}}</p>
-            </div>
-          {{/foreach}}
+<div class="grid">
+  
+  <div class="lp-home-card-container lp-border lp-border-bottom">
+  {{#foreach posts}}
+  
+  <article class="lp-home-card" id="{{slug}}" style="background-image: url({{img_url feature_image size="m"}}) ">
+    <section class="lp-home-card--front">
+      <header class="lp-home-card__header">
+        <p class="lp-home-card__location">
+          {{primary_tag.name}}
+        </p>
+      </header>
+      <div>
+        <div class="lp-home-card__body">
+          <h2>{{title}}</h2>
         </div>
-        <a href="{{url}}">
-          <svg viewBox="0 0 24 24" ><path fill="none" d="M0 0h24v24H0z"/><path d="M12 11V8l4 4-4 4v-3H8v-2h4zm0-9c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 18c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8z" fill="currentColor" /></svg>
-        </a>
-      </footer>
-    </div>
-  </section>
-  <section class="lp-home-card--back">
-    <p>{{excerpt}}</p>
-    <a class="lp-home-card__read" href="{{url}}" class="lp-button">Read</a>
-  </section>
-</article>
-
-{{/foreach}}
+        <footer>
+          <div class="lp-home-card__authors">
+            {{#foreach authors}}
+              <div class="lp-author">
+                <img src="{{img_url profile_image size="s"}}" alt="{{name}}">
+                <p>{{name}}</p>
+              </div>
+            {{/foreach}}
+          </div>
+          <a href="{{url}}">
+            <svg viewBox="0 0 24 24" ><path fill="none" d="M0 0h24v24H0z"/><path d="M12 11V8l4 4-4 4v-3H8v-2h4zm0-9c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 18c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8z" fill="currentColor" /></svg>
+          </a>
+        </footer>
+      </div>
+    </section>
+    <section class="lp-home-card--back">
+      <p>{{excerpt}}</p>
+      <a class="lp-home-card__read" href="{{url}}" class="lp-button">Read</a>
+    </section>
+  </article>
+  
+  {{/foreach}}
+  </div>
 </div>
 
 <section>

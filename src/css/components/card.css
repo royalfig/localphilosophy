@@ -1,10 +1,15 @@
 /* Home cards */
 .lp-home-card-container {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
   gap: 1rem;
   padding: 1rem;
   padding-left: calc((100vw - var(--width)) / 2);
   overflow-x: scroll;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 1rem;
 }
 
 .lp-home-card-container--inner {
