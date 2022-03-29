@@ -1,7 +1,7 @@
 {
-  "name": "ghost-theme-starter",
+  "name": "localphilosophy",
   "version": "1.0.0",
-  "description": "A Ghost theme starter",
+  "description": "Local Philosophy",
   "engines": {
     "ghost": ">=4.0.0",
     "ghost-api": "v4"

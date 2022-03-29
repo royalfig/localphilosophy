@@ -1,9 +1,9 @@
 import GhostContentAPI from '@tryghost/content-api';
 
 const api = new GhostContentAPI({
-  key: 'e8b32d10226f82ed257715582b',
+  key: '3a0ecf83ab3136e0f43f4730d2',
   version: 'v4',
-  url: 'http://localhost:2368',
+  url: 'https://localphilosophy-org.ghost.io',
 });
 
 const posts = api.posts.browse({ include: 'tags,authors' });
