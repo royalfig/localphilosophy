@@ -109,9 +109,10 @@
 /* Content */
 .lp-post__content {
   display: grid;
-  grid-template-columns: var(--gap) 1fr 2rem 1rem var(--content) 1rem 2rem 1fr var(
+  grid-template-columns: var(--gap) 1fr 2rem 1rem minmax(100px, 720px) 1rem 2rem 1fr var(
       --gap
     );
+  max-width: 100%;
 }
 
 .lp-post__content > * {

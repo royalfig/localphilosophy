@@ -61,7 +61,7 @@
   --radius-small: 3px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   :root {
     --gap: 2rem;
   }
