@@ -2,7 +2,7 @@ function shareDialogue(e) {
   const shareMenu = document.querySelector('.lp-share-menu');
 
   const title = e.target.dataset.name;
-  const url = window.location;
+  const url = window.location.href;
 
   if (shareMenu.getAttribute('aria-expanded') === 'true') {
     shareMenu.setAttribute('aria-expanded', 'false');
@@ -32,4 +32,16 @@ function share() {
   shareButton.addEventListener('click', shareDialogue);
 }
 
-export default share;
+function copy() {
+  const copyButton = document.querySelector('#copy-button');
+
+  copyButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(window.location.href);
+    copyButton.classList.add('copied');
+    setTimeout(() => {
+      copyButton.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+export { share, copy };

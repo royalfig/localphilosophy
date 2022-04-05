@@ -30,6 +30,6 @@ overlay.addEventListener('click', (e) => {
 });
 
 // Share
-import share from './share';
-console.log(share);
+import { share, copy } from './share';
 share();
+copy();

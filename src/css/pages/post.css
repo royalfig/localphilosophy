@@ -2,11 +2,12 @@
 
 .post {
   margin-block-end: 3rem;
+  transform: translateY(-9.5rem);
 }
 
 .lp-post__header {
   position: relative;
-  padding-bottom: 3rem;
+  padding-bottom: 15.5rem;
 }
 
 .lp-post__header-img::before {
@@ -56,6 +57,7 @@
 .lp-post__author .lp-author {
   justify-content: center;
   font-size: 1.15rem;
+  font-weight: 700;
 }
 
 .lp-post__meta {
@@ -65,7 +67,7 @@
   margin-top: 0.5rem;
   font-size: var(--small);
   color: #fff;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .lp-post__meta a,
@@ -120,4 +122,17 @@
 
 .lp-post__content > * {
   grid-column: 5 / 6;
+}
+
+/* Map */
+#lp-post-map {
+  width: auto;
+  max-width: 100%;
+  height: 25rem;
+  margin: 0 auto;
+  aspect-ratio: 2 / 1;
+  background-color: var(--c-light);
+  /* margin-top: 3rem; */
+  transform: translateY(-50%);
+  border-radius: var(--radius-small);
 }
