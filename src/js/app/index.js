@@ -28,3 +28,8 @@ overlay.addEventListener('click', (e) => {
   if (e.target.classList.contains('lp-overlay'))
     overlay.setAttribute('aria-expanded', false);
 });
+
+// Share
+import share from './share';
+console.log(share);
+share();

@@ -11,46 +11,46 @@
 
 .lp-post__header-img::before {
   position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0 0 0 / 0.85);
-  content: '';
   z-index: 1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: rgba(0 0 0 / 0.85);
 }
 
 .lp-post__header-img {
   position: absolute;
-  height: 100%;
-  width: 100%;
   top: 0;
   left: 0;
-  grid-column: 1 / -1;
   z-index: -1;
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / -1;
 }
 
 .lp-post__header-img > img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
 .lp-post__header h1 {
+  margin: 3rem 0 1rem;
   color: #fff;
   text-align: center;
-  margin: 3rem 0 1rem;
 }
 
 .lp-post__author {
-  color: #fff;
-  width: auto;
   display: flex;
-  gap: 1rem;
   justify-content: center;
+  width: auto;
+  color: #fff;
+  gap: 1rem;
 }
 
 .lp-post__author a {
-  text-decoration: none;
   width: auto;
+  text-decoration: none;
 }
 
 .lp-post__author .lp-author {
@@ -60,31 +60,31 @@
 
 .lp-post__meta {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  font-size: var(--small);
   color: #fff;
   gap: 1rem;
-  font-size: var(--small);
-  margin-top: 1rem;
 }
 
 .lp-post__meta a,
 .lp-post__meta p,
 .lp-post__meta button {
   display: flex;
-  align-items: center;
-  gap: 3px;
   flex-wrap: nowrap;
+  align-items: center;
   text-decoration: none;
+  gap: 3px;
 }
 
 .lp-post__meta button {
-  background: none;
-  border: none;
   font-family: inherit;
   font-size: inherit;
   color: #fff;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .lp-post__meta a:hover {
@@ -92,18 +92,17 @@
 }
 
 .lp-post__meta svg {
-  height: 1em;
-  width: 1em;
   display: inline-block;
+  width: 1em;
+  height: 1em;
 }
 
 .lp-post__excerpt {
-  margin-top: 1rem;
+  max-width: 66ch;
+  margin: 2rem auto 0;
+  font-size: 0.9rem;
   color: #fff;
   text-align: center;
-  font-size: 0.9rem;
-  max-width: 66ch;
-  margin: 1rem auto 0;
 }
 
 /* Content */
@@ -113,6 +112,10 @@
       --gap
     );
   max-width: 100%;
+}
+
+.lp-post__content > *[id]:first-child {
+  margin-top: 0;
 }
 
 .lp-post__content > * {

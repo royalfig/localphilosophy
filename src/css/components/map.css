@@ -1,41 +1,10 @@
 .lp-home-map {
-  height: calc((100vh - (4.25rem + 4rem)) * 0.6);
+  height: calc((100vh - (4.25rem + 4rem)) * 0.7);
   margin: 1rem 0;
 }
 
 .lp-home-map-right {
   grid-column: 5;
-}
-
-.lp-places {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-}
-
-.lp-places > * {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  width: 100%;
-  padding-left: 1rem;
-  font-family: var(--f-heading);
-  font-size: 1.5rem;
-}
-
-.lp-places a {
-  display: block;
-  display: inline-flex;
-  align-items: center;
-  font-weight: 700;
-  line-height: 1;
-  text-decoration: none;
-  transition: color var(--transition);
-}
-
-.lp-places a:hover {
-  color: var(--c-primary);
 }
 
 .lp-popup-content {
@@ -132,4 +101,69 @@
   height: 1.25em;
   margin-right: 0.5em;
   border-radius: 50%;
+}
+
+/* Places */
+
+.lp-places {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: var(--gap);
+  gap: 1rem;
+}
+
+.lp-places a {
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  font-family: var(--f-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-style: solid;
+  transition: background-color var(--transition);
+}
+
+.lp-places a:hover {
+  background-color: var(--c-primary);
+}
+
+.lp-places span {
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0 0.25em;
+  margin-left: 0.25em;
+  font-family: var(--f-body);
+  font-weight: 400;
+  background-color: var(--c-light);
+  /* border-radius: 50%; */
+  border-radius: var(--radius-small);
+}
+
+.lp-places a[href='#'] {
+  pointer-events: none;
+  background-color: var(--c-50);
+}
+
+span.lp-coming-soon {
+  width: auto;
+  height: auto;
+  padding: 0 0.25em;
+  margin-left: 0.5em;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: var(--radius-small);
+  transform: translateY(2px);
+  aspect-ratio: unset;
+}
+
+.lp-places svg {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0 0.25em;
+  margin-left: 0.25em;
 }

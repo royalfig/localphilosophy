@@ -3,10 +3,10 @@
   align-items: center;
   width: 100%;
   max-width: var(--width);
+  height: 4.25rem;
   padding: 1rem 0;
   margin: 0 auto;
   grid-template-columns: minmax(25%, 1fr) auto minmax(25%, 1fr);
-  height: 4.25rem;
 }
 
 .lp-navbar__left button {
@@ -23,12 +23,17 @@
 
 .lp-navbar__center p,
 .lp-navbar__center h1 {
-  font-family: var(--f-logo);
-  font-weight: 900;
-  font-style: italic;
-  font-size: 1.25rem;
   margin: 0;
+  font-family: var(--f-logo);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 900;
 }
+
+.lp-navbar__center a {
+  text-decoration: none;
+}
+
 .lp-navbar__center--top {
   display: flex;
   flex-direction: column;

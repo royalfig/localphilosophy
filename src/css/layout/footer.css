@@ -1,1 +1,25 @@
 /* Add footer styles here */
+.lp-footer {
+  margin-top: var(--gap);
+  background-color: var(--c-50);
+}
+
+.lp-footer__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.lp-footer__column {
+  font-size: var(--small);
+  line-height: 1.2;
+  color: var(--c-700);
+}
+
+.lp-footer__column:first-of-type p:first-child {
+  margin-bottom: 0.25rem;
+  font-family: var(--f-heading);
+  font-style: italic;
+  font-weight: 900;
+}

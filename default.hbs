@@ -7,8 +7,8 @@
 
         {{!-- Google Fonts --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,700;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,700;1,700;1,900&display=swap" rel="stylesheet">
         {{!-- CSS and JS with asset helper--}}
         <link rel="stylesheet" href="{{asset "built/app.css"}}" />
         <script src="{{asset "built/app.js"}}" defer></script>
@@ -35,11 +35,9 @@
             {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
             {{{body}}}
         </main>
+    
+        {{> "footer"}}
 
-        <div class="grid">
-            {{!-- Navbar partial --}}
-            {{> "footer"}}
-        </div>
 
         {{{block "foot"}}}
 

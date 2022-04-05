@@ -1,0 +1,18 @@
+.lp-cta__left {
+  max-width: 66ch;
+  padding-bottom: 1rem;
+}
+
+.lp-cta__left a {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--c-900);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  background-color: var(--c-primary);
+}
+
+.lp-cta__left a:hover {
+  background-color: var(--c-light);
+}

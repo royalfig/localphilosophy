@@ -18,7 +18,7 @@
   position: relative;
   flex-shrink: 0;
 
-  height: calc((100vh - (4.25rem + 4rem)) * 0.4);
+  height: calc((100vh - (4.25rem + 4rem)) * 0.3);
 
   padding: 0.75rem 1rem;
   background-repeat: no-repeat;
@@ -76,11 +76,11 @@
   display: inline-block;
   padding: 0.5em;
   font-size: min(var(--small), 13px);
+  line-height: 1;
   color: var(--c-900);
+  text-decoration: none;
   background-color: var(--c-primary);
   border-radius: var(--radius-small);
-  text-decoration: none;
-  line-height: 1;
 }
 
 .lp-home-card h2 {
@@ -141,18 +141,18 @@
 .lp-home-card--back {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   gap: 1rem;
-  justify-content: space-between;
 }
 
 .lp-home-card--back p {
-  color: var(--c-100);
+  display: box;
+  overflow: hidden;
   font-size: var(--small);
-  display: -webkit-box;
+  color: var(--c-100);
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .lp-home-card--back > *:first-child {
@@ -160,6 +160,6 @@
 }
 
 .lp-home-card--back > *:last-child {
-  margin: 0;
   align-self: flex-start;
+  margin: 0;
 }

@@ -2,7 +2,7 @@
   --f-system: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
     oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --f-heading: 'Playfair Display', serif;
-  --f-body: 'Chivo', serif;
+  --f-body: 'Lora', serif;
   --f-logo: 'Playfair Display';
   --h1: 2rem;
   --h2: 1.7411rem;
@@ -16,7 +16,7 @@
   --button-padding: 0.5em 1em;
   --transition: 0.3s;
 
-  --width: 1200px;
+  --width: 1500px;
   --content: 720px;
 
   --c-primary: #00bdd6;

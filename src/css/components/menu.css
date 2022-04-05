@@ -12,46 +12,52 @@
 }
 
 .lp-overlay .lp-button {
-  float: right;
 }
 
 .lp-overlay .lp-button--icon svg {
-  fill: #fff;
+  fill: var(--c-900);
 }
 .lp-overlay .lp-button--icon:hover svg {
   fill: var(--c-light);
 }
 
 .lp-menu {
-  width: 50%;
+  width: 100%;
   height: 100%;
+  padding: var(--gap) 0;
   background-color: #fff;
   transition: transform 0.2s ease-out 0s;
   transform: translateX(-100%);
-  padding: var(--gap) 0;
 }
 
 .lp-menu a {
   text-decoration: none;
-  padding: 0 var(--gap);
 }
 
 .lp-menu a:hover {
   color: var(--c-primary);
 }
 
+.lp-menu__title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lp-menu > .grid:first-child {
+  padding-bottom: 1rem;
+}
+
 .lp-menu__title {
   font-family: var(--f-heading);
   font-size: 2rem;
-  font-weight: 900;
   font-style: italic;
+  font-weight: 900;
 }
 
 .lp-menu__title + p {
+  margin-bottom: 1rem;
   line-height: 1.2;
   color: var(--c-700);
-  margin-bottom: 1rem;
-  padding: 0 var(--gap);
 }
 
 .lp-overlay[aria-expanded='true'] {

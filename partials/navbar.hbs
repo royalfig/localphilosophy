@@ -9,8 +9,8 @@
   <div class='lp-navbar__center'>
     <div class='lp-navbar__center--top'>
 
-      {{#is 'home'}}<h1>Local Philosophy</h1>
-      {{else}}<p>Local Philosophy</p>
+      {{#is 'home'}}<h1><a href="{{@site.url}}">{{@site.title}}</a></h1>
+      {{else}}<p><a href="{{@site.url}}">{{@site.title}}</a></p>
       {{/is}}
 
       {{! <p class='lp-local'>Local</p>

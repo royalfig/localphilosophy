@@ -18,6 +18,8 @@
 @import './components/map.css';
 @import './components/card.css';
 @import './components/bg.css';
+@import './components/cta.css';
+@import './components/share-menu.css';
 
 /* Layout */
 @import './layout/navigation.css';
