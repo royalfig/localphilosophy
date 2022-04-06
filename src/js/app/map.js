@@ -203,6 +203,39 @@ function createMultiLocationMap() {
   });
 }
 
-function createSingleLocationMap() {}
+function createSingleLocationMap() {
+  const mapData = document.getElementById('lp-post-map');
+  const { gc } = mapData.dataset;
+  const coords = parseLocation(gc);
+  console.log(coords);
+  const map = L.map('lp-post-map').setView(coords, 13);
+
+  const ACCESS_TOKEN =
+    'pk.eyJ1Ijoicm95YWxmaWciLCJhIjoiY2t6M2Z2NzdpMDZlODJwbXpxbWF3ZWRybCJ9._5YW-t0-6Nfn_fav0TO8eg';
+
+  L.tileLayer(
+    `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${ACCESS_TOKEN}`,
+    {
+      attribution: `Map data &copy; <a
+href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
+contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>`,
+      maxZoom: 18,
+      id: 'mapbox/cjerxnqt3cgvp2rmyuxbeqme7',
+      tileSize: 512,
+      zoomOffset: -1,
+    },
+  ).addTo(map);
+
+  const mapIcon = L.icon({
+    iconUrl: getMapIconUrl().mapPinIcon,
+    iconSize: [30, 30],
+    iconAnchor: [15, 10],
+    shadowUrl: getMapIconUrl().mapPinShadowIcon,
+    shadowSize: [30, 30],
+    shadowAnchor: [15, 10],
+  });
+
+  const m = L.marker(coords, { icon: mapIcon }).addTo(map);
+}
 
 export { createMultiLocationMap, createSingleLocationMap };

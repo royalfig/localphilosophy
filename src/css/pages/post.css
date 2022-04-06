@@ -2,12 +2,12 @@
 
 .post {
   margin-block-end: 3rem;
-  transform: translateY(-9.5rem);
+  transform: translateY(-8.5rem);
 }
 
 .lp-post__header {
   position: relative;
-  padding-bottom: 15.5rem;
+  padding-bottom: 12.5rem;
 }
 
 .lp-post__header-img::before {
@@ -130,10 +130,10 @@
 /* Map */
 #lp-post-map {
   width: auto;
-  max-width: 100%;
-  height: 25rem;
+
+  height: min(40vw, 400px);
   margin: 0 auto;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 1.75 / 1;
   background-color: var(--c-light);
   /* margin-top: 3rem; */
   transform: translateY(-50%);

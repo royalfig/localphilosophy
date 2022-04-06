@@ -80,7 +80,9 @@
   padding: 0;
   color: var(--c-900);
   border-radius: var(--radius-small);
+  overflow: hidden;
 }
+
 .leaflet-popup-content {
   margin: 0;
 }
@@ -114,7 +116,6 @@
 
 .lp-places a {
   display: inline-flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
   padding: 0.75rem 1rem;
@@ -125,6 +126,7 @@
   text-decoration: none;
   border-style: solid;
   transition: background-color var(--transition);
+  flex-basis: max-content;
 }
 
 .lp-places a:hover {
@@ -141,6 +143,7 @@
   background-color: var(--c-light);
   /* border-radius: 50%; */
   border-radius: var(--radius-small);
+  font-weight: 700;
 }
 
 .lp-places a[href='#'] {
@@ -154,9 +157,8 @@ span.lp-coming-soon {
   padding: 0 0.25em;
   margin-left: 0.5em;
   font-size: 12px;
-  text-transform: uppercase;
   border-radius: var(--radius-small);
-  transform: translateY(2px);
+  /* transform: translateY(2px); */
   aspect-ratio: unset;
 }
 

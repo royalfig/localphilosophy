@@ -6,9 +6,6 @@
   gap: 1rem;
   padding: 1rem 1rem 1rem 0;
   overflow-x: scroll;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 1rem;
 }
 
 .lp-home-card-container--inner {
@@ -23,8 +20,9 @@
   padding: 0.75rem 1rem;
   background-repeat: no-repeat;
   background-size: cover;
-  border: 5px solid #fff;
+
   aspect-ratio: 4 / 3;
+  border-radius: var(--radius-small);
   /* overflow: hidden; */
 }
 
@@ -45,10 +43,12 @@
   overflow: hidden;
   content: '';
   background-image: var(--linear-up);
+  border-radius: var(--radius-small);
 }
 
 .lp-current-card::before {
-  background-image: linear-gradient(rgba(0 0 0 / 0.75), rgba(0 0 0 / 0.75));
+  background-image: none;
+  background-color: rgba(0 0 0 / 0.85);
 }
 
 .lp-current-card::after {
@@ -60,11 +60,11 @@
   border-style: solid;
   border-width: 1rem;
   transition: border-color var(--transition);
-  transform: translate(-50%, calc(-50% - 5px));
+  transform: translate(-50%, -50%);
 }
 
 .lp-current-card::after {
-  border-color: transparent transparent var(--c-primary) transparent;
+  border-color: transparent transparent var(--c-50) transparent;
 }
 
 .lp-home-card > section {
@@ -81,6 +81,7 @@
   text-decoration: none;
   background-color: var(--c-primary);
   border-radius: var(--radius-small);
+  font-weight: 700;
 }
 
 .lp-home-card h2 {
@@ -98,17 +99,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .lp-home-card footer a {
-  display: inline-block;
-  height: 1.25em;
-  height: 1.25em;
-  line-height: 1;
+  font-size: var(--small);
+  font-weight: 700;
+  color: var(--c-primary);
+  text-decoration: none;
+  transition: color var(--transition);
 }
 
-.lp-home-card footer a:hover svg {
+.lp-home-card footer a:hover {
   color: var(--c-light);
 }
 
@@ -123,7 +125,7 @@
 
 /* Interactivity */
 .lp-current-card {
-  border: 5px solid var(--c-primary);
+  /* border: 5px solid var(--c-primary); */
 }
 
 .lp-current-card .lp-home-card--front {
@@ -150,8 +152,8 @@
   display: box;
   overflow: hidden;
   font-size: var(--small);
-  color: var(--c-100);
-  -webkit-line-clamp: 6;
+  color: var(--c-50);
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 
