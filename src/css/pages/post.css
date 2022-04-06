@@ -39,6 +39,7 @@
   margin: 3rem 0 1rem;
   color: #fff;
   text-align: center;
+  font-size: 2.5rem;
 }
 
 .lp-post__author {
@@ -78,6 +79,7 @@
   align-items: center;
   text-decoration: none;
   gap: 3px;
+  transition: color var(--transition);
 }
 
 .lp-post__meta button {
@@ -89,7 +91,8 @@
   border: none;
 }
 
-.lp-post__meta a:hover {
+.lp-post__meta a:hover,
+.lp-post__meta button:hover {
   color: var(--c-primary);
 }
 
@@ -110,7 +113,7 @@
 /* Content */
 .lp-post__content {
   display: grid;
-  grid-template-columns: var(--gap) 1fr 2rem 1rem minmax(100px, 720px) 1rem 2rem 1fr var(
+  grid-template-columns: var(--gap) 1fr 2rem 1rem minmax(100px, var(--content)) 1rem 2rem 1fr var(
       --gap
     );
   max-width: 100%;

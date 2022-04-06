@@ -1,6 +1,5 @@
 import '../../css/app.css';
-
-import test from './map';
+import { createMultiLocationMap } from './map';
 
 // LiveReload server
 if (ENV === 'development') {
@@ -11,6 +10,9 @@ if (ENV === 'development') {
   document.head.append(script);
   console.log('Reload script added');
 }
+
+// Map
+createMultiLocationMap();
 
 // Menu
 const closeMenu = document.querySelector('#close-menu');
@@ -25,11 +27,7 @@ closeMenu.addEventListener('click', (e) => {
 });
 
 overlay.addEventListener('click', (e) => {
-  if (e.target.classList.contains('lp-overlay'))
+  if (e.target.classList.contains('lp-overlay')) {
     overlay.setAttribute('aria-expanded', false);
+  }
 });
-
-// Share
-import { share, copy } from './share';
-share();
-copy();
