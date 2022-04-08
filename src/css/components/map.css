@@ -1,5 +1,5 @@
 .lp-home-map {
-  height: calc((100vh - (4.25rem + 4rem)) * 0.7);
+  height: calc((100vh - (var(--navbar-height) + 4rem)) * var(--map-height));
   margin: 1rem 0;
 }
 
@@ -47,10 +47,9 @@
   line-height: 1;
 }
 
-.lp-popup-author img,
-.lp-popup-author svg {
-  width: 1.5em;
-  height: 1.5em;
+.lp-popup-author img {
+  width: 2em;
+  height: 2em;
   margin-right: 0.35em;
   color: var(--c-700);
   border-radius: 50%;
@@ -81,6 +80,7 @@
   color: var(--c-900);
   border-radius: var(--radius-small);
   overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
 .leaflet-popup-content {
@@ -160,6 +160,10 @@ span.lp-coming-soon {
   border-radius: var(--radius-small);
   /* transform: translateY(2px); */
   aspect-ratio: unset;
+  background-color: var(--c-800);
+  color: var(--c-50);
+  display: inline;
+  letter-spacing: 0.2px;
 }
 
 .lp-places svg {

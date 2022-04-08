@@ -1,5 +1,7 @@
 import '../../css/app.css';
 import { createMultiLocationMap } from './map';
+import initOverlay from './overlay';
+import search from './search';
 
 // LiveReload server
 if (ENV === 'development') {
@@ -14,20 +16,8 @@ if (ENV === 'development') {
 // Map
 createMultiLocationMap();
 
-// Menu
-const closeMenu = document.querySelector('#close-menu');
-const menu = document.querySelector('#menu');
-const overlay = document.querySelector('.lp-overlay');
-menu.addEventListener('click', (e) => {
-  overlay.setAttribute('aria-expanded', true);
-});
+// Nav and search overlay
+initOverlay();
 
-closeMenu.addEventListener('click', (e) => {
-  overlay.setAttribute('aria-expanded', false);
-});
-
-overlay.addEventListener('click', (e) => {
-  if (e.target.classList.contains('lp-overlay')) {
-    overlay.setAttribute('aria-expanded', false);
-  }
-});
+// Search
+search();

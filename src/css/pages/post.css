@@ -2,7 +2,7 @@
 
 .post {
   margin-block-end: 3rem;
-  transform: translateY(-8.5rem);
+  transform: translateY(-8rem);
 }
 
 .lp-post__header {
@@ -36,10 +36,10 @@
 }
 
 .lp-post__header h1 {
-  margin: 3rem 0 1rem;
+  margin: 3rem 0 1.5rem;
   color: #fff;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 
 .lp-post__author {
@@ -111,12 +111,21 @@
 }
 
 /* Content */
+
 .lp-post__content {
   display: grid;
-  grid-template-columns: var(--gap) 1fr 2rem 1rem minmax(100px, var(--content)) 1rem 2rem 1fr var(
-      --gap
-    );
+  grid-template-columns:
+    var(--gap) 1fr 1rem 0.5rem minmax(100px, var(--content))
+    0.5rem 1rem 1fr var(--gap);
   max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .lp-post__content {
+    grid-template-columns:
+      var(--gap) 1fr 2rem 1rem minmax(100px, var(--content))
+      1rem 2rem 1fr var(--gap);
+  }
 }
 
 .lp-post__content > *[id]:first-child {
@@ -129,11 +138,11 @@
 
 /* Map */
 #lp-post-map {
-  width: auto;
+  width: 35rem;
+  max-width: 100%;
 
-  height: min(40vw, 400px);
+  height: 20rem;
   margin: 0 auto;
-  aspect-ratio: 1.75 / 1;
   background-color: var(--c-light);
   /* margin-top: 3rem; */
   transform: translateY(-50%);

@@ -1,9 +1,9 @@
-<div class='lp-overlay' aria-expanded='false'>
+<div class='lp-overlay' aria-expanded='false' id="{{type}}">
   <div class='lp-menu'>
     <div class="grid lp-border lp-border-bottom">
       <div class="lp-menu__title-container">
         <p class='lp-menu__title'><a href='{{@site.url}}'>{{@site.title}}</a></p>
-        <button class='lp-button lp-button--icon' id='close-menu'>
+        <button class='lp-close-button lp-button lp-button--icon'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 24 24'
@@ -16,8 +16,12 @@
       </div>
       <p>{{@site.description}}</p>
       </div>
+      {{#match type "=" "nav"}}
       <div class='grid lp-border lp-border-bottom'>
         {{navigation}}
       </div>
+      {{else}}
+        {{> "search"}}
+      {{/match}}
     </div>
 </div>

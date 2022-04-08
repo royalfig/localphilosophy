@@ -6,6 +6,9 @@ const api = new GhostContentAPI({
   url: 'https://localphilosophy-org.ghost.io',
 });
 
-const posts = api.posts.browse({ include: 'tags,authors' });
+const posts = api.posts.browse({
+  include: 'tags,authors',
+  formats: 'plaintext',
+});
 
 export default posts;

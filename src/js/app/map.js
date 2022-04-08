@@ -1,5 +1,6 @@
 import posts from './api';
 import * as L from 'leaflet/dist/leaflet-src.esm';
+import { PosAnimation } from 'leaflet';
 
 const getMapIconUrl = () => {
   const mapPin = document.querySelector('[data-map-pin]');
@@ -17,16 +18,11 @@ function parseLocation(input) {
 
 function createAuthorMarkup(authors) {
   const profileImage = (profileProp) => {
-    return profileProp
-      ? `<img src="${profileProp}">`
-      : `<svg viewBox="0 0 24 24" ><path fill="none" d="M0 0h24v24H0z"/><path d="M17.084 15.812a7 7 0 1 0-10.168 0A5.996 5.996 0 0 1 12 13a5.996 5.996 0 0 1 5.084 2.812zM12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zM12 12a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" fill="currentColor"/></svg>`;
+    return profileProp ? `<figure><img src="${profileProp}"></figure>` : '';
   };
 
   const authorMarkup = authors.map(
-    (author) =>
-      `<figure>${profileImage(author.profile_image)}</figure><p>${
-        author.name
-      }</p>`,
+    (author) => `${profileImage(author.profile_image)}<p>${author.name}</p>`,
   );
   return `<div class="lp-popup-author">${authorMarkup.join('')}</div>`;
 }
@@ -36,30 +32,24 @@ function createFeatureImageSize(featureImageUrl) {
   return domain + 'images/size/w300' + image;
 }
 
-function isInViewport(el) {
+function isInViewport(popup, card, cardContainer) {
   const clientWidth = document.documentElement.clientWidth;
-  const { x, width } = el.getBoundingClientRect();
+  const cardAttributes = card.getBoundingClientRect();
+  const popupAttributes = popup.getBoundingClientRect();
 
-  const startOfEl = x;
-  const endOfEl = x + width;
+  const cardLeft = cardAttributes.left;
+  const popupLeft = popupAttributes.left;
 
-  if (startOfEl < clientWidth || endOfEl > clientWidth) {
-    cardContainer.scrollBy({
-      left: endOfEl - clientWidth,
-      behavior: 'smooth',
-    });
-  }
-  console.log({
-    startOfEl,
-    endOfEl,
-    clientWidth,
-    scrollW: cardContainer.scrollWidth,
-    scrolled: endOfEl - clientWidth,
-  });
+  const cardMiddle = cardAttributes.width / 2;
+  const popupMiddle = popupAttributes.width / 2;
+  const df = popupLeft + popupMiddle - cardLeft + cardMiddle;
 
-  // if (x + width > clientWidth) {
-  //   console.log(el);
-  //   cardContainer.scrollBy(clientWidth - x + width, 0);
+  console.log(clientWidth - cardAttributes.width + cardAttributes.left);
+  console.log(popup.getBoundingClientRect(), card.getBoundingClientRect());
+
+  card.scrollIntoView(false);
+  // if (cardLeft + cardAttributes.width > clientWidth) {
+  //   cardContainer.scrollBy(clientWidth - cardLeft + cardAttributes.width, 0);
   // } else {
   //   cardContainer.scrollBy(0, 0);
   // }
@@ -153,7 +143,7 @@ function createMultiLocationMap() {
       shadowAnchor: [15, 10],
     });
 
-    L.popup({ maxWidth: 400 });
+    const width = document.documentElement.clientWidth > 500 ? 400 : 300;
 
     mapData.forEach((location, idx) => {
       const authors = createAuthorMarkup(location.authors);
@@ -167,11 +157,11 @@ function createMultiLocationMap() {
         <h2>${location.title}</h2>
         <div class="lp-popup-meta">
         ${authors}
-        <a href="${location.url}"><svg viewBox="0 0 24 24" ><path fill="none" d="M0 0h24v24H0z"/><path d="M12 11V8l4 4-4 4v-3H8v-2h4zm0-9c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 18c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8z" fill="currentColor"/></svg></a>
+        <a href="/${location.slug}"><svg viewBox="0 0 24 24" ><path fill="none" d="M0 0h24v24H0z"/><path d="M12 11V8l4 4-4 4v-3H8v-2h4zm0-9c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 18c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8z" fill="currentColor"/></svg></a>
         </div>
       </div>
       </div>`,
-        { maxWidth: 400, closeButton: false, id: location.slug },
+        { maxWidth: width, closeButton: false, id: location.slug },
       );
       markers.push(m);
 
@@ -185,7 +175,7 @@ function createMultiLocationMap() {
         const id = e.popup.options.id;
         setCurrent(id);
         const correspondingEl = document.getElementById(id);
-        isInViewport(correspondingEl);
+        isInViewport(e.popup._container, correspondingEl, cardContainer);
       });
     });
 

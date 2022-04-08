@@ -8,7 +8,7 @@
 </section>
 
 <section class="grid lp-border-bottom lp-border">
-  <div class="lp-home-card-container lp-border lp-border-bottom">
+  <div class="lp-home-card-container">
   {{#foreach posts}}
     <article class="lp-home-card" id="{{slug}}" style="background-image: url({{img_url feature_image size="m"}}) ">
       <section class="lp-home-card--front">
@@ -38,7 +38,7 @@
       </section>
       <section class="lp-home-card--back">
         <p>{{excerpt words="35"}}...</p>
-        <a class="lp-home-card__read" href="{{url}}" class="lp-button">Read</a>
+        <a class="lp-home-card__read" href="{{url}}" class="lp-button">Read &rarr;</a>
       </section>
     </article>
   {{/foreach}}

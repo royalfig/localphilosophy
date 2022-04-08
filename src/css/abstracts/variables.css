@@ -14,10 +14,14 @@
 
   --gap: 1rem;
   --button-padding: 0.5em 1em;
+  --card-padding: 1em;
   --transition: 0.3s;
 
-  --width: 70rem;
+  --width: 65rem;
   --content: 52ch;
+  --map-height: 0.6;
+  --card-height: 0.4;
+  --navbar-height: 3.25rem;
 
   --c-primary: #00bdd6;
   --c-light: #62efff;
@@ -36,6 +40,8 @@
   --c-700: hsl(187, 2%, 20%);
   --c-800: hsl(187, 2%, 10%);
   --c-900: hsl(187, 2%, 2%);
+
+  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   /* 
   --c-50: hsl(240, 5%, 96%);
   --c-200: hsl(240, 6%, 90%);
@@ -57,12 +63,19 @@
     hsla(var(--hsl-900), 0) 90%
   );
 
-  --radius: 8px;
-  --radius-small: 3px;
+  --radius: 0.5em;
+  --radius-small: 0.15em;
 }
 
 @media (min-width: 768px) {
   :root {
     --gap: 2rem;
+  }
+}
+
+@media (min-height: 1000px) {
+  :root {
+    --map-height: 0.7;
+    --card-height: 0.3;
   }
 }

@@ -1,7 +1,7 @@
 /* You would enter button styles here */
 .lp-button {
   padding: var(--button-padding);
-  font-family: var(--f-system);
+  font-family: var(--f-body);
   font-size: var(--small);
   line-height: 1;
   color: #fff;

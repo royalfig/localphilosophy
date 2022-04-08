@@ -15,7 +15,7 @@
   position: relative;
   flex-shrink: 0;
 
-  height: calc((100vh - (4.25rem + 4rem)) * 0.3);
+  height: calc((100vh - (var(--navbar-height) + 4rem)) * var(--card-height));
 
   padding: 0.75rem 1rem;
   background-repeat: no-repeat;
@@ -75,13 +75,18 @@
 .lp-home-card__read {
   display: inline-block;
   padding: 0.5em;
-  font-size: min(var(--small), 13px);
+  font-size: min(var(--small), 15px);
   line-height: 1;
   color: var(--c-900);
   text-decoration: none;
   background-color: var(--c-primary);
   border-radius: var(--radius-small);
   font-weight: 700;
+  transition: background-color var(--transition);
+}
+
+.lp-home-card__read:hover {
+  background-color: var(--c-light);
 }
 
 .lp-home-card h2 {
@@ -126,6 +131,8 @@
 /* Interactivity */
 .lp-current-card {
   /* border: 5px solid var(--c-primary); */
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.15))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.13));
 }
 
 .lp-current-card .lp-home-card--front {

@@ -3,8 +3,8 @@
   align-items: center;
   width: 100%;
   max-width: var(--width);
-  height: 4.25rem;
-  padding: 1rem 0;
+  height: 3.25rem;
+  padding: 0.5rem 0;
   margin: 0 auto;
   grid-template-columns: minmax(25%, 1fr) auto minmax(25%, 1fr);
 }
