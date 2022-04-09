@@ -3,27 +3,28 @@
 }
 .lp-share-menu {
   position: absolute;
-  right: 0;
   top: 50%;
-  transform: translate(calc(100% + 0.75em), -50%);
+  right: 0;
   padding: 0.5rem;
-  border-radius: var(--radius-small);
-  background-color: #fff;
-  opacity: 0;
   pointer-events: none;
+  background-color: #fff;
+  border-radius: var(--radius-small);
+  opacity: 0;
   transition: opacity var(--transition);
+  transform: translate(calc(100% + 0.75em), -50%) scale(0, 0);
 }
 
 .lp-share-menu[aria-expanded='true'] {
-  opacity: 1;
   pointer-events: all;
+  opacity: 1;
+  transform: translate(calc(100% + 0.75em), -50%) scale(100%, 100%);
 }
 
 .lp-share-menu::before {
-  content: '';
   position: absolute;
   top: 50%;
   left: -0.9em;
+  content: '';
   border-color: transparent white transparent transparent;
   border-style: solid;
   border-width: 0.5em;
@@ -31,9 +32,9 @@
 }
 
 .lp-post__meta .lp-share__link svg {
-  color: var(--c-800);
-  height: 1.25rem;
   width: 1.25rem;
+  height: 1.25rem;
+  color: var(--c-800);
   transition: fill var(--transition);
 }
 

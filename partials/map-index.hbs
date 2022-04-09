@@ -4,7 +4,14 @@
 
 
 <section class='lp-home-map-wrapper lp-border lp-border-bottom grid'>
-    <div class='lp-home-map' id='map'></div>
+  <div class='lp-home-map' id='map'></div>
+  {{#is "tag"}}
+    {{#tag}}
+    <div class="lp-place-name">
+      <h1>{{name}}</h1>
+    </div>
+    {{/tag}}
+  {{/is}}
 </section>
 
 <section class="grid lp-border-bottom lp-border">
@@ -13,7 +20,7 @@
     <article class="lp-home-card" id="{{slug}}" style="background-image: url({{img_url feature_image size="m"}}) ">
       <section class="lp-home-card--front">
         <header class="lp-home-card__header">
-          <p class="lp-home-card__location">
+          <p class="lp-badge">
             {{primary_tag.name}}
           </p>
         </header>
@@ -38,7 +45,7 @@
       </section>
       <section class="lp-home-card--back">
         <p>{{excerpt words="35"}}...</p>
-        <a class="lp-home-card__read" href="{{url}}" class="lp-button">Read &rarr;</a>
+        <a class="lp-badge" href="{{url}}" class="lp-button">Read &rarr;</a>
       </section>
     </article>
   {{/foreach}}
@@ -47,24 +54,20 @@
 
 <section class="grid lp-border-bottom lp-border">
   <h2>Places</h2>
-  <div class='lp-places'>
-      {{#get 'tags' include='count.posts' order='count.posts desc' limit='5'}}
-        {{#foreach tags}}
-          <a class="lp-border" href='{{url}}'>
-              <p>{{name}}</p><span>{{count.posts}}</span></a>
-        {{/foreach}}
-      <a class="lp-border" href='#'>Maine <span class="lp-coming-soon"><p>Coming Soon</p></span></a>
-      <a class="lp-border" href='#'>Portland <span class="lp-coming-soon"><p>Coming Soon</p></span></a>
-      <a class="lp-border" href='/places'><p>More Places &rarr;</p></a>
-    </div>
+  
+    <div class="lp-places-container">
+        {{#get "tags" include="count.posts" order="count.posts desc"}}
+            {{#foreach tags}}
+                {{> "place-card"}}
+            {{/foreach}}
+        {{/get}}
+    
+</div>
   </div>
  
 </section>
-{{/get}}
-</section>
 
-
-<section class="grid">
+<section class="grid lp-border-bottom lp-border">
   <div class="lp-cta__left">
     <h2>Where are you going?</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sequi illum expedita illo, fugiat ipsam magnam nihil magni soluta pariatur ad? Suscipit sint error voluptate, quas fuga illum ab sunt.s</p>

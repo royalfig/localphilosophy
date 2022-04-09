@@ -112,7 +112,7 @@ function createMultiLocationMap() {
       };
     });
 
-    const map = L.map('map').setView(mapData[0].coords, 13);
+    const map = L.map('map').setView(mapData[0].coords, 15);
 
     map.on('click', () => {
       setCurrent(null);
@@ -198,7 +198,7 @@ function createSingleLocationMap() {
   const { gc } = mapData.dataset;
   const coords = parseLocation(gc);
   console.log(coords);
-  const map = L.map('lp-post-map').setView(coords, 13);
+  const map = L.map('lp-post-map').setView(coords, 15);
 
   const ACCESS_TOKEN =
     'pk.eyJ1Ijoicm95YWxmaWciLCJhIjoiY2t6M2Z2NzdpMDZlODJwbXpxbWF3ZWRybCJ9._5YW-t0-6Nfn_fav0TO8eg';

@@ -9,11 +9,17 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
+  border-radius: var(--radius-small);
   transition: background-color var(--transition);
 }
 
-.lp-button:hover {
-  background-color: var(--light);
+.lp-button--color {
+  color: var(--c-900);
+  background-color: var(--c-primary);
+}
+
+.lp-button--color:hover {
+  background-color: var(--c-light);
 }
 
 .lp-button--icon {

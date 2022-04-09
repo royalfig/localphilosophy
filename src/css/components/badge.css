@@ -1,0 +1,12 @@
+.lp-badge {
+  display: inline-block;
+  padding: var(--button-padding);
+  font-size: var(--small);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--c-900);
+  text-decoration: none;
+  background-color: var(--c-primary);
+  border-radius: var(--radius-small);
+  transition: background-color var(--transition);
+}

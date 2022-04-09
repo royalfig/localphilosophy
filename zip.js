@@ -17,5 +17,6 @@ zip.addLocalFile('./default.hbs');
 zip.addLocalFile('./index.hbs');
 zip.addLocalFile('./package.json');
 zip.addLocalFile('./post.hbs');
+zip.addLocalFile('./custom-places.hbs');
 zip.addLocalFile('./README.md');
 zip.writeZip('./theme.zip');

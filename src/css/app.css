@@ -22,16 +22,19 @@
 @import './components/share-menu.css';
 @import './components/search.css';
 @import './components/place-card.css';
+@import './components/badge.css';
 
 /* Layout */
 @import './layout/navigation.css';
 @import './layout/header.css';
 @import './layout/footer.css';
+@import './layout/forms.css';
 
 /* Pages */
 @import './pages/index.css';
 @import './pages/post.css';
 @import './pages/content.css';
+@import './pages/places.css';
 
 /* Vendor */
 @import './vendors/ghost.css';

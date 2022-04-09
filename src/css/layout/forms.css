@@ -1,0 +1,46 @@
+.lp-contact-form-wrapper {
+  padding: 2rem;
+  background-color: var(--c-50);
+  border-radius: var(--radius);
+}
+
+.lp-contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lp-contact-form label {
+  font-size: var(--small);
+  color: var(--c-600);
+}
+
+.lp-contact-form h2 {
+  margin: 0 0 0.5rem;
+}
+
+.lp-contact-form p {
+  margin: 0 0 1rem;
+}
+
+.lp-contact-form input,
+.lp-contact-form textarea {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.lp-input {
+  min-width: 8rem;
+  padding: 0.25rem 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 1px solid var(--c-100);
+  border-radius: var(--radius-small);
+  accent-color: var(--c-primary);
+}
+
+.lp-input:focus {
+  border: 1px solid var(--c-primary);
+  outline: none;
+}

@@ -1,11 +1,25 @@
 /* Home cards */
 .lp-home-card-container {
   display: grid;
+  padding: 1rem 1rem 1rem 0;
+  margin-bottom: 1rem;
+  overflow-x: scroll;
   grid-auto-flow: column;
   grid-auto-columns: auto;
   gap: 1rem;
-  padding: 1rem 1rem 1rem 0;
-  overflow-x: scroll;
+}
+
+.lp-home-card-container::-webkit-scrollbar-track {
+  background-color: var(--c-50);
+}
+
+.lp-home-card-container::-webkit-scrollbar-thumb {
+  background-color: var(--c-100);
+  border-radius: var(--radius-small);
+}
+
+.lp-home-card-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--c-200);
 }
 
 .lp-home-card-container--inner {
@@ -18,12 +32,14 @@
   height: calc((100vh - (var(--navbar-height) + 4rem)) * var(--card-height));
 
   padding: 0.75rem 1rem;
+  /* overflow: hidden; */
+  filter: saturation(0.8);
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: var(--radius-small);
+  transition: filter var(--transition);
 
   aspect-ratio: 4 / 3;
-  border-radius: var(--radius-small);
-  /* overflow: hidden; */
 }
 
 .lp-home-card section {
@@ -46,9 +62,13 @@
   border-radius: var(--radius-small);
 }
 
+.lp-current-card {
+  filter: saturation(1);
+}
+
 .lp-current-card::before {
-  background-image: none;
   background-color: rgba(0 0 0 / 0.85);
+  background-image: none;
 }
 
 .lp-current-card::after {
@@ -69,24 +89,6 @@
 
 .lp-home-card > section {
   position: relative;
-}
-
-.lp-home-card__location,
-.lp-home-card__read {
-  display: inline-block;
-  padding: 0.5em;
-  font-size: min(var(--small), 15px);
-  line-height: 1;
-  color: var(--c-900);
-  text-decoration: none;
-  background-color: var(--c-primary);
-  border-radius: var(--radius-small);
-  font-weight: 700;
-  transition: background-color var(--transition);
-}
-
-.lp-home-card__read:hover {
-  background-color: var(--c-light);
 }
 
 .lp-home-card h2 {

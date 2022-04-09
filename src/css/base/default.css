@@ -5,13 +5,17 @@ html {
   font-size: clamp(1rem, 0.8333rem + 0.3472vw, 1.25rem);
   line-height: 1.5;
   scroll-behavior: smooth;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   /* 
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; */
+}
+
+body {
+  overflow-x: hidden;
 }
 
 main {

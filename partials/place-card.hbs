@@ -1,6 +1,11 @@
-<article class="lp-place-card" style="background-image: url({{img_url feature_image size='m'}})">
-        <header>
-            <h2>{{name}}</h2>
-        </header>
-        {{#if description}}<p class="lp-place-card__description">{{description}}</p>{{/if}}
+<article class="lp-place-card">
+    <img src="{{img_url feature_image size='m'}}" alt="View of {{name}}">
+    <a href="{{url}}" aria-label="Posts about {{name}}">
+    <header>
+        <p class="lp-badge">{{count.posts}} posts</p>
+    </header>
+    <footer>
+        <h2>{{name}} &rarr;</h2>
+    </footer>
+    </a>
 </article>

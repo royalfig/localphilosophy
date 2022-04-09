@@ -1,6 +1,6 @@
-function shareDialogue(e) {
-  const shareMenu = document.querySelector('.lp-share-menu');
+const shareMenu = document.querySelector('.lp-share-menu');
 
+function shareDialogue(e) {
   const title = e.target.dataset.name;
   const url = window.location.href;
 
@@ -15,10 +15,7 @@ function shareDialogue(e) {
         title,
         url,
       })
-      .then(() => {
-        console.log('Thanks for sharing!');
-      })
-      .catch(console.error);
+      .catch((err) => console.error('An error has occurred', err));
   } else {
     shareMenu.setAttribute('aria-expanded', 'true');
   }
@@ -28,6 +25,15 @@ function share() {
   const shareButton = document.querySelector('#lp-share-button');
 
   if (!shareButton) return;
+
+  document.body.addEventListener('click', (e) => {
+    if (
+      shareMenu.getAttribute('aria-expanded') === 'true' &&
+      !e.target.classList.contains('lp-post__share-btn')
+    ) {
+      shareMenu.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   shareButton.addEventListener('click', shareDialogue);
 }
