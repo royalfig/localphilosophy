@@ -3,6 +3,7 @@
   padding: var(--button-padding);
   font-family: var(--f-body);
   font-size: var(--small);
+  font-weight: 700;
   line-height: 1;
   color: #fff;
   text-decoration: none;

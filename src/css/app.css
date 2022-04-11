@@ -35,6 +35,7 @@
 @import './pages/post.css';
 @import './pages/content.css';
 @import './pages/places.css';
+@import './pages/author.css';
 
 /* Vendor */
 @import './vendors/ghost.css';

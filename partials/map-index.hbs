@@ -17,37 +17,7 @@
 <section class="grid lp-border-bottom lp-border">
   <div class="lp-home-card-container">
   {{#foreach posts}}
-    <article class="lp-home-card" id="{{slug}}" style="background-image: url({{img_url feature_image size="m"}}) ">
-      <section class="lp-home-card--front">
-        <header class="lp-home-card__header">
-          <p class="lp-badge">
-            {{primary_tag.name}}
-          </p>
-        </header>
-        <div>
-          <div class="lp-home-card__body">
-            <h2>{{title}}</h2>
-          </div>
-          <footer>
-            <div class="lp-home-card__authors">
-              {{#foreach authors}}
-                <div class="lp-author">
-                  {{#if profile_image}}<img src="{{img_url profile_image size="s"}}" alt="{{name}}">{{/if}}
-                  <p>{{name}}</p>
-                </div>
-              {{/foreach}}
-            </div>
-            <a href="{{url}}">
-              Read &rarr;
-            </a>
-          </footer>
-        </div>
-      </section>
-      <section class="lp-home-card--back">
-        <p>{{excerpt words="35"}}...</p>
-        <a class="lp-badge" href="{{url}}" class="lp-button">Read &rarr;</a>
-      </section>
-    </article>
+    {{> "card" home="true"}}
   {{/foreach}}
   </div>
 </section>

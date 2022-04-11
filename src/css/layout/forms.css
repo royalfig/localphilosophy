@@ -1,5 +1,5 @@
 .lp-contact-form-wrapper {
-  padding: 2rem;
+  padding: 1rem 2rem;
   background-color: var(--c-50);
   border-radius: var(--radius);
 }
@@ -13,6 +13,7 @@
 .lp-contact-form label {
   font-size: var(--small);
   color: var(--c-600);
+  width: 100%;
 }
 
 .lp-contact-form h2 {
@@ -27,6 +28,11 @@
 .lp-contact-form textarea {
   display: block;
   margin-bottom: 1rem;
+  width: 100%;
+}
+
+.lp-contact-form textarea {
+  height: 12rem;
 }
 
 .lp-input {
