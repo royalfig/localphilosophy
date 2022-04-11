@@ -37,14 +37,31 @@
  
 </section>
 
-<section class="grid lp-border-bottom lp-border">
-  <div class="lp-cta__left">
-    <h2>Where are you going?</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sequi illum expedita illo, fugiat ipsam magnam nihil magni soluta pariatur ad? Suscipit sint error voluptate, quas fuga illum ab sunt.s</p>
-    <a class="lp-button" href="/#/portal">Subscribe</a>
-  </div>
-  <div class="lp-cta__right">
-
+<section class="grid lp-border-bottom lp-border lp-cta">
+  <div>
+    <div class="lp-cta__left">
+      <h2>Where are you going?</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sequi illum expedita illo, fugiat ipsam magnam nihil magni soluta pariatur ad? Suscipit sint error voluptate, quas fuga illum ab sunt.s</p>
+      <a class="lp-button" href="/#/portal">Subscribe</a>
+    </div>
+    <div class="lp-cta__right">
+    {{#get "tags" include="count.posts" order="count.posts desc" limit="all"}}
+    {{#foreach tags}}
+    <p>{{name}}</p>
+    {{/foreach}}
+    <p>Cincinati</p>
+    <p>Tucson</p>
+    <p>Detroit</p>
+    <p>Detroit</p>
+    <p>Detroit</p>
+    <p>Detroit</p>
+    <p>Detroit</p>
+    <p>Detroit</p>
+    <p>Detroit</p>
+    <p>Detroit</p>
+    <p>Detroit</p>
+    {{/get}}
+    </div>
   </div>
 </section>
 

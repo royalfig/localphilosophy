@@ -1,6 +1,5 @@
 /* Add footer styles here */
 .lp-footer {
-  margin-top: var(--gap);
   background-color: var(--c-darkest);
   color: var(--c-light);
   padding: 2rem 0;

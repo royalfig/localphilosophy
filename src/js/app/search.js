@@ -34,8 +34,14 @@ function search() {
     const searchResultsContainer = document.querySelector('.lp-search-results');
 
     input.addEventListener('input', (e) => {
+      searchResultsContainer.innerHTML = '';
       if (e.target.value.length > 2) {
         const results = searchInstance.search(e.target.value);
+
+        if (!results.length) {
+          searchResultsContainer.innerHTML = '<h3>No results... Try again?</h3>';
+          return;
+        }
 
         const searchResults = results.map((result) =>
           searchResultTemplateRenderer(result),

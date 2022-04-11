@@ -40,7 +40,6 @@ function initOverlay() {
   });
 
   function findElement(srcButton) {
-    console.log(srcButton.id, srcButton.id.startsWith('menu'));
     if (srcButton.id.startsWith('search')) {
       return document.querySelector('#search');
     }
@@ -59,6 +58,8 @@ function initOverlay() {
     const el = findElement(e.currentTarget);
     document.body.classList.add('no-scroll');
     el.setAttribute('aria-expanded', true);
+    const firstFocusableEl = el.querySelector('a');
+    firstFocusableEl.focus();
   });
 }
 

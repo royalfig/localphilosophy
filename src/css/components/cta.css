@@ -1,17 +1,59 @@
+
+.lp-cta {
+  padding: 3rem 0;
+  background-color: var(--c-secondary);
+  overflow: hidden;
+  position: relative;
+}
+
+.lp-cta.lp-border {
+  border: none;
+}
+.lp-cta > div {
+  display: flex;
+}
+
 .lp-cta__left {
   max-width: 66ch;
   padding-bottom: 1rem;
+  width: 50%;
+  padding-right: 2rem;
 }
 
 .lp-cta__left a {
   display: inline-block;
   margin-top: 1rem;
   font-weight: 700;
-  color: var(--c-darkest);
+  color: var(--c-lightest);
   letter-spacing: 0.2px;
-  background-color: var(--c-primary);
+  background-color: var(--c-secondary-dark);
 }
 
 .lp-cta__left a:hover {
-  background-color: var(--c-primary-light);
+  background-color: var(--c-darkest);
+}
+
+.lp-cta__right {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 50%;
+transform: rotate(-35deg) ;
+position: absolute;
+transform-origin: top;
+right: 3rem;
+top: 0;
+}
+
+.lp-cta__right p {
+  font-size: 2.75rem;
+  background-color: var(--c-secondary-dark);
+  font-weight: 900;
+  font-family: var(--c-heading);
+  opacity: .15;
+border-radius: var(--radius);
+padding: var(--button-padding-y) var(--button-padding-x);
+white-space: nowrap;
+color: var(--c-secondary);
 }

@@ -1,6 +1,6 @@
 /* You would enter button styles here */
 .lp-button {
-  padding: var(--button-padding);
+  padding: var(--button-padding-y) var(--button-padding-x);
   font-family: var(--f-body);
   font-size: var(--small);
   font-weight: 700;

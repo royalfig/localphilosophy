@@ -21,6 +21,7 @@
   text-align: center;
 }
 
+
 .lp-navbar__center p,
 .lp-navbar__center h1 {
   margin: 0;
@@ -32,40 +33,11 @@
 
 .lp-navbar__center a {
   text-decoration: none;
+  
 }
 
-.lp-navbar__center--top {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.lp-navbar__center--bottom {
-  margin-top: 0.15rem;
-}
-
-.lp-navbar__center--bottom p {
-  font-family: var(--f-body);
-  font-size: var(--small);
-  font-style: italic;
-  line-height: 1.2;
-}
-
-.lp-post .lp-navbar__center--bottom p {
-  color: var(--c-lighter);
-}
-
-.lp-logo-marker {
-  box-sizing: content-box;
-  width: 2rem;
-  height: 2rem;
-  padding: 0.15em;
-  border: 3px solid var(--c-primary);
-  border-radius: 50%;
-}
-
-.lp-post .lp-logo-marker {
-  border-color: var(--c-primary-light);
+.post-template .lp-navbar__center a {
+  color: var(--c-lightest)
 }
 
 .lp-post .lp-button--icon svg {

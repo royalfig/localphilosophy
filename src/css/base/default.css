@@ -26,3 +26,12 @@ main {
 .no-scroll {
   overflow: hidden;
 }
+
+:focus-visible {
+  outline: var(--c-secondary) solid 1px;
+}
+
+::selection {
+  background-color: var(--c-secondary-light);
+  color: var(--c-darkest);
+}

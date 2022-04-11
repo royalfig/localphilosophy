@@ -53,7 +53,7 @@
   left: 0;
   overflow: hidden;
   content: '';
-  background-image: var(--linear-up);
+  background-color: rgba(0 0 0 / .75);
   border-radius: var(--radius-small);
 }
 
@@ -92,9 +92,11 @@
   color: var(--c-lightest);
 }
 
-.lp-home-card__authors {
+.lp-home-card__authors p {
   font-size: var(--small);
-  color: var(--c-50);
+  color: var(--c-lighter);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing);
 }
 
 .lp-home-card footer {

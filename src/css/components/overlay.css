@@ -18,7 +18,7 @@
   fill: var(--c-darkest);
 }
 .lp-overlay .lp-button--icon:hover svg {
-  fill: var(--c-primary-light);
+  fill: var(--c-primary);
 }
 
 .lp-menu {
@@ -70,4 +70,13 @@
 .lp-overlay[aria-expanded='true'] .lp-menu {
   transition: transform 0.2s ease-in 0.1s;
   transform: translateX(0);
+}
+
+.lp-places__overlay {
+  padding: 1rem 0;
+  row-gap: 1rem;
+}
+
+.lp-places__overlay h2 {
+  margin: 0;
 }

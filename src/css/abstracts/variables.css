@@ -20,7 +20,7 @@
   --button-padding-y: 0.5em;
   --button-padding-x: 1em;
   --card-padding: 1em;
-  --icon-right: 0.15em;
+  --icon-right: 0.25em;
   --transition: 0.3s;
   --letter-spacing: .35px;
 
@@ -30,22 +30,22 @@
   --card-height: 0.4;
   --navbar-height: 3.25rem;
 
-  --c-primary: #62b7c7;
-  --c-primary-light: #d8edf1;
-  --c-primary-dark: #3b6e77;
+  --c-primary: hsl(190, 47%, 58%); 
+  --c-primary-light: hsl(190, 47%, 68%);
+  --c-primary-dark: hsl(189, 47%, 48%);
 
-  --c-secondary: #fec788;
-  --c-secondary-light: #fff1e1;
-  --c-secondary-dark: #7c6243;
+  --c-secondary: #fec686; 
+  --c-secondary-light: hsl(32, 100%, 87%);
+  --c-secondary-dark: #ffb357;
 
-  --c-darkest: hsl(15, 6%, 14%);
+  --c-darkest: #262322; 
   --c-darker: hsl(15, 6%, 18%);
   --c-dark: hsl(15, 6%, 22%);
 
   --c-lightest: hsl(15, 100%, 98%);
-  --c-lighter: hsl(15, 100%, 94%);
-  --c-light: hsl(15, 100%, 90%);
-
+  --c-lighter: hsl(15, 100%, 96%);
+  --c-light: hsl(15, 100%, 92%);
+  
 
 
 
