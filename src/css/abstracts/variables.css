@@ -4,43 +4,51 @@
   --f-heading: 'Playfair Display', serif;
   --f-body: 'Lora', serif;
   --f-logo: 'Playfair Display';
+  
   --h1: 2rem;
   --h2: 1.7411rem;
   --h3: 1.5157rem;
   --h4: 1.3195rem;
   --h5: 1.1487rem;
   --h6: 1rem;
-  --small: 0.8706rem;
+  
+  --small: 0.833rem;
+  --smaller: .694rem;
+  --smallest: .579rem;
 
-  --gap: 1rem;
-  --button-padding: 0.5em 1em;
+  --gap: 1.5rem;
+  --button-padding-y: 0.5em;
+  --button-padding-x: 1em;
   --card-padding: 1em;
-  --transition: 0.3s;
   --icon-right: 0.15em;
+  --transition: 0.3s;
+  --letter-spacing: .35px;
 
   --width: 65rem;
-  --content: 55ch;
+  --content: 52ch;
   --map-height: 0.6;
   --card-height: 0.4;
   --navbar-height: 3.25rem;
 
-  --c-primary: #00bdd6;
-  --c-light: #62efff;
-  --c-dark: #008ba3;
-  --c-secondary: #ff9800;
-  --c-secondary-light: #ffc947;
-  --c-secondary-dark: #c66900;
+  --c-primary: #62b7c7;
+  --c-primary-light: #d8edf1;
+  --c-primary-dark: #3b6e77;
 
-  --c-50: hsl(187, 2%, 90%);
-  --c-100: hsl(187, 2%, 80%);
-  --c-200: hsl(187, 2%, 70%);
-  --c-300: hsl(187, 2%, 60%);
-  --c-400: hsl(187, 2%, 50%);
-  --c-500: hsl(187, 2%, 42%);
-  --c-600: hsl(187, 2%, 30%);
-  --c-700: hsl(187, 2%, 20%);
-  --c-800: hsl(187, 2%, 10%);
-  --c-900: hsl(187, 2%, 2%);
+  --c-secondary: #fec788;
+  --c-secondary-light: #fff1e1;
+  --c-secondary-dark: #7c6243;
+
+  --c-darkest: hsl(15, 6%, 14%);
+  --c-darker: hsl(15, 6%, 18%);
+  --c-dark: hsl(15, 6%, 22%);
+
+  --c-lightest: hsl(15, 100%, 98%);
+  --c-lighter: hsl(15, 100%, 94%);
+  --c-light: hsl(15, 100%, 90%);
+
+
+
+
 
   --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   /* 
@@ -54,16 +62,6 @@
   --c-800: hsl(240, 4%, 16%);
   --c-900: hsl(240, 6%, 10%); */
 
-  --hsl-900: 187, 2%, 2%;
-
-  --linear-up: linear-gradient(
-    0deg,
-    hsla(var(--hsl-900), 1) 0%,
-    hsla(var(--hsl-900), 0.85) 25%,
-    hsla(var(--hsl-900), 0.45) 55%,
-    hsla(var(--hsl-900), 0) 90%
-  );
-
   --radius: 0.5em;
   --radius-small: 0.15em;
 }
@@ -73,6 +71,8 @@
     --gap: 2rem;
   }
 }
+
+
 
 @media (min-height: 1000px) {
   :root {

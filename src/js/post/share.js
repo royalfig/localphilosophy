@@ -26,15 +26,6 @@ function share() {
 
   if (!shareButton) return;
 
-  document.body.addEventListener('click', (e) => {
-    if (
-      shareMenu.getAttribute('aria-expanded') === 'true' &&
-      !e.target.classList.contains('lp-post__share-btn')
-    ) {
-      shareMenu.setAttribute('aria-expanded', 'false');
-    }
-  });
-
   shareButton.addEventListener('click', shareDialogue);
 }
 
@@ -46,7 +37,7 @@ function copy() {
     copyButton.classList.add('copied');
     setTimeout(() => {
       copyButton.classList.remove('copied');
-    }, 2000);
+    }, 3000);
   });
 }
 

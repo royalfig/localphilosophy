@@ -20,6 +20,14 @@
       <div class='grid lp-border lp-border-bottom'>
         {{navigation}}
       </div>
+      <div class='grid lp-border lp-border-bottom'>
+        <h2>Places</h2>
+          {{#get "tags" limit="9" include="count.posts" order="count.posts desc"}}
+            {{#foreach tags}}
+              <p><a href="{{url}}">{{name}}</a></p>
+            {{/foreach}}
+          {{/get}}
+      </div>
       {{else}}
         {{> "search"}}
       {{/match}}

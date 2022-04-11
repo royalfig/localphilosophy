@@ -1,11 +1,11 @@
 .lp-border {
   width: 100%;
-  border-color: var(--c-50);
+  border-color: var(--c-lighter);
   border-width: 1px;
 }
 
 .lp-post.lp-border {
-  border-color: var(--c-500);
+  border-color: var(--c-dark);
 }
 
 .lp-border-bottom {
@@ -14,4 +14,9 @@
 
 .lp-border-left {
   border-left-style: solid;
+}
+
+
+.lp-border-top {
+  border-top-style: solid;
 }

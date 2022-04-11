@@ -1,6 +1,6 @@
 .lp-contact-form-wrapper {
   padding: 1rem 2rem;
-  background-color: var(--c-50);
+  background-color: var(--c-lighter);
   border-radius: var(--radius);
 }
 
@@ -12,7 +12,7 @@
 
 .lp-contact-form label {
   font-size: var(--small);
-  color: var(--c-600);
+  color: var(--c-dark);
   width: 100%;
 }
 
@@ -41,7 +41,7 @@
   font-family: inherit;
   font-size: 1rem;
   font-weight: 700;
-  border: 1px solid var(--c-100);
+  border: 1px solid var(--c-light);
   border-radius: var(--radius-small);
   accent-color: var(--c-primary);
 }

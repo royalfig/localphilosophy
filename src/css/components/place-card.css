@@ -44,7 +44,7 @@
 
 .lp-place-card__badge {
   width: auto;
-  color: var(--c-900);
+  color: var(--c-darkest);
   background-color: var(--c-primary);
   border-radius: var(--radius-small);
 }

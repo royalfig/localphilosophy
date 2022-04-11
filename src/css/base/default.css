@@ -1,11 +1,12 @@
 html {
   font-family: var(--f-body);
-  font-size: 1rem;
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.8333rem + 0.3472vw, 1.25rem);
+  font-size: 1.0625rem;
+  font-size: clamp(1.0625rem, 0.9553571428571429rem + 0.2976190476190476vw, 1.3125rem);
   line-height: 1.5;
   scroll-behavior: smooth;
   text-rendering: optimizelegibility;
+  background-color: var(--c-lightest);
+  color: var(--c-darkest);
   /* 
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -20,4 +21,8 @@ body {
 
 main {
   min-height: 100vh;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

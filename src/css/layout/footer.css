@@ -1,25 +1,43 @@
 /* Add footer styles here */
 .lp-footer {
   margin-top: var(--gap);
-  background-color: var(--c-50);
+  background-color: var(--c-darkest);
+  color: var(--c-light);
+  padding: 2rem 0;
+
+}
+
+.lp-footer a {
+  text-decoration: none;
+}
+
+.lp-footer a:hover {
+  color: var(--c-primary);
 }
 
 .lp-footer__inner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  padding: 1rem 0;
+  gap: var(--gap);
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .lp-footer__column {
   font-size: var(--small);
-  line-height: 1.2;
-  color: var(--c-700);
+  color: inherit;
+  color: var(--c-light);
+
 }
 
 .lp-footer__column:first-of-type p:first-child {
   margin-bottom: 0.25rem;
-  font-family: var(--f-heading);
+  font-family: var(--f-logo);
   font-style: italic;
   font-weight: 900;
+}
+
+.lp-copyright {
+  font-size: var(--smaller);
+  text-align: center;
 }

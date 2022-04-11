@@ -1,18 +1,26 @@
 <footer class="lp-footer grid">
 
     <div class="lp-footer__inner">
+        <div class="lp-footer__column">
+            <p><a href="{{@site.url}}">{{@site.title}}</a></p>
+            <p>Our ideas come from somewhere</p>
+            <p>Here are some of the places.</p>
+            <p><a href="/#/portal">Subscribe &rarr;</a></p>
+        </div>
+
+        <div class="lp-footer__column">
+            <p><strong>Places</strong></p>
+            {{#get "tags" limit="4" include="count.posts" order="count.posts desc"}}
+                {{#foreach tags}}
+                <p><a href="{{url}}">{{name}}</a></p>
+                {{/foreach}}
+            {{/get}}
+            <p><a href="/places">More Places &rarr;</a></p>
+        </div>
 
 <div class="lp-footer__column">
-    <p>{{@site.title}}</p>
-    <p>{{@site.description}}</p>
-</div>
-
-<div class="lp-footer__column">
-
-</div>
-
-<div class="lp-footer__column">
-    &copy; {{date format="YYYY"}}
+    {{navigation isSecondary="true"}}
 </div>
 </div>
+<p class="lp-copyright">Joseph Arel &copy; {{date format="YYYY"}}</p>
 </footer>

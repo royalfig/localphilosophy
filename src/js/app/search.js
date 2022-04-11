@@ -2,7 +2,7 @@ import * as JsSearch from 'js-search';
 import posts from './api';
 
 function searchResultTemplateRenderer(data) {
-  const authors = data.authors.map((author) => `<p>${author.name}</p>`);
+  const authors = data.authors.map((author) => author.name);
   const published = new Date(data.published_at);
   const formatter = new Intl.ListFormat('en', {
     style: 'long',
@@ -11,12 +11,13 @@ function searchResultTemplateRenderer(data) {
   return `
   <article class="lp-search-result">
   <h3><a href="/${data.slug}">${data.title}</a></h3>
-  <p>${new Intl.DateTimeFormat('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  }).format(published)}</p>
-  <div class="lp-search-result__authors">${formatter.format(authors)}</div>
+  <div class="lp-search-result__meta">
+    <p>by ${formatter.format(authors)} on ${new Intl.DateTimeFormat('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+    }).format(published)}</p>
+  </div>
   </article>
   `;
 }

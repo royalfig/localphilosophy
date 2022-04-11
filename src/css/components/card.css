@@ -1,5 +1,5 @@
 /* Home cards */
-.lp-home-card-container {
+.lp-home-card-container, .lp-post_related {
   display: grid;
   padding: 1rem 1rem 1rem 0;
   margin-bottom: 1rem;
@@ -10,16 +10,16 @@
 }
 
 .lp-home-card-container::-webkit-scrollbar-track {
-  background-color: var(--c-50);
+  background-color: var(--c-lightest);
 }
 
 .lp-home-card-container::-webkit-scrollbar-thumb {
-  background-color: var(--c-100);
+  background-color: var(--c-lighter);
   border-radius: var(--radius-small);
 }
 
 .lp-home-card-container::-webkit-scrollbar-thumb:hover {
-  background-color: var(--c-200);
+  background-color: var(--c-light);
 }
 
 .lp-home-card-container--inner {
@@ -28,17 +28,12 @@
 .lp-home-card {
   position: relative;
   flex-shrink: 0;
-
   height: calc((100vh - (var(--navbar-height) + 4rem)) * var(--card-height));
-
-  padding: 0.75rem 1rem;
-  /* overflow: hidden; */
-  filter: saturation(0.8);
+  padding: var(--card-padding);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: var(--radius-small);
   transition: filter var(--transition);
-
   aspect-ratio: 4 / 3;
 }
 
@@ -84,7 +79,7 @@
 }
 
 .lp-current-card::after {
-  border-color: transparent transparent var(--c-50) transparent;
+  border-color: transparent transparent var(--c-lightest) transparent;
 }
 
 .lp-home-card > section {
@@ -94,12 +89,12 @@
 .lp-home-card h2 {
   margin: 0;
   font-size: 1rem;
-  color: var(--c-50);
+  color: var(--c-lightest);
 }
 
 .lp-home-card__authors {
-  font-size: 14px;
-  color: var(--c-100);
+  font-size: var(--small);
+  color: var(--c-50);
 }
 
 .lp-home-card footer {
@@ -109,26 +104,6 @@
   margin-top: 1rem;
 }
 
-.lp-home-card footer a {
-  font-size: var(--small);
-  font-weight: 700;
-  color: var(--c-primary);
-  text-decoration: none;
-  transition: color var(--transition);
-}
-
-.lp-home-card footer a:hover {
-  color: var(--c-light);
-}
-
-.lp-home-card footer svg {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  line-height: 1;
-  color: var(--c-primary);
-  transition: fill var(--transition);
-}
 
 /* Interactivity */
 .lp-current-card {
@@ -161,7 +136,7 @@
   display: box;
   overflow: hidden;
   font-size: var(--small);
-  color: var(--c-50);
+  color: var(--c-lightest);
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }

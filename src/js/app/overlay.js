@@ -26,6 +26,7 @@ function initOverlay() {
     );
 
     if (e.key === 'Escape' && openOverlay) {
+      document.body.classList.remove('no-scroll');
       openOverlay.setAttribute('aria-expanded', 'false');
     }
   });
@@ -33,6 +34,7 @@ function initOverlay() {
   closeButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
       const overlay = e.currentTarget.closest('.lp-overlay');
+      document.body.classList.remove('no-scroll');
       overlay.setAttribute('aria-expanded', 'false');
     });
   });
@@ -48,13 +50,14 @@ function initOverlay() {
   searchButton.addEventListener('click', (e) => {
     const el = findElement(e.currentTarget);
     el.setAttribute('aria-expanded', true);
+    document.body.classList.add('no-scroll');
     const searchInput = el.querySelector('input');
     searchInput.focus();
   });
 
   menuButton.addEventListener('click', (e) => {
     const el = findElement(e.currentTarget);
-    console.log(el);
+    document.body.classList.add('no-scroll');
     el.setAttribute('aria-expanded', true);
   });
 }

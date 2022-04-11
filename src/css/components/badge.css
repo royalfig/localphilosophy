@@ -1,12 +1,19 @@
 .lp-badge {
   display: inline-block;
-  padding: var(--button-padding);
-  font-size: var(--small);
-  font-weight: 700;
-  line-height: 1;
-  color: var(--c-900);
+  padding: var(--button-padding-y) var(--button-padding-x);
+  font-size: var(--smallest);
+  /* line-height: 1; */
+  color: var(--c-lightest);
+  border: 1px solid;
   text-decoration: none;
-  background-color: var(--c-primary);
   border-radius: var(--radius-small);
   transition: background-color var(--transition);
+  font-family: var(--f-system);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+  transition: var(--transition);
+}
+
+a.lp-badge:hover {
+  color: var(--c-primary-light);
 }

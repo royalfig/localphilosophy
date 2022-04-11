@@ -7,7 +7,7 @@
   right: 0;
   padding: 0.5rem;
   pointer-events: none;
-  background-color: #fff;
+  background-color: var(--c-lightest);
   border-radius: var(--radius-small);
   opacity: 0;
   transition: opacity var(--transition);
@@ -25,7 +25,7 @@
   top: 50%;
   left: -0.9em;
   content: '';
-  border-color: transparent white transparent transparent;
+  border-color: transparent var(--c-lightest) transparent transparent;
   border-style: solid;
   border-width: 0.5em;
   transform: translateY(-50%);
@@ -34,8 +34,8 @@
 .lp-post__meta .lp-share__link svg {
   width: 1.25rem;
   height: 1.25rem;
-  color: var(--c-800);
-  transition: fill var(--transition);
+  color: var(--c-darker);
+  transition: color var(--transition);
 }
 
 .lp-share__link:not(:last-child) {
@@ -45,6 +45,16 @@
   color: var(--c-primary);
 }
 
-.lp-share__link.copied svg {
-  color: var(--c-secondary);
+.lp-post__meta .copied svg.lp-copy-icon {
+  display: none;
 }
+
+.lp-post__meta svg.lp-copied-icon {
+  display: none;
+}
+
+.lp-post__meta .copied svg.lp-copied-icon {
+  display: initial;
+}
+
+

@@ -21,7 +21,7 @@
 .lp-author__location {
   display: inline-flex;
   align-items: center;
-  color: var(--c-500);
+  color: var(--c-dark);
   justify-content: center;
 }
 
@@ -43,7 +43,7 @@
 
 .lp-author__social a {
   line-height: 1;
-  color: var(--c-500);
+  color: var(--c-dark);
   transition: color var(--transition);
 }
 
