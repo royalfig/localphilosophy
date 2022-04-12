@@ -11,9 +11,9 @@
 }
 
 .lp-contact-form label {
+  width: 100%;
   font-size: var(--small);
   color: var(--c-dark);
-  width: 100%;
 }
 
 .lp-contact-form h2 {
@@ -27,8 +27,8 @@
 .lp-contact-form input,
 .lp-contact-form textarea {
   display: block;
-  margin-bottom: 1rem;
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .lp-contact-form textarea {

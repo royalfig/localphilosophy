@@ -1,5 +1,6 @@
 /* Home cards */
-.lp-home-card-container, .lp-post_related {
+.lp-home-card-container,
+ .lp-post_related {
   display: grid;
   padding: 1rem 1rem 1rem 0;
   margin-bottom: 1rem;
@@ -53,7 +54,7 @@
   left: 0;
   overflow: hidden;
   content: '';
-  background-color: rgba(0 0 0 / .75);
+  background-color: rgba(0 0 0 / 0.75);
   border-radius: var(--radius-small);
 }
 
@@ -94,8 +95,8 @@
 
 .lp-home-card__authors p {
   font-size: var(--small);
-  color: var(--c-lighter);
   font-weight: 700;
+  color: var(--c-lighter);
   letter-spacing: var(--letter-spacing);
 }
 

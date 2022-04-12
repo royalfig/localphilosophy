@@ -1,59 +1,62 @@
-
 .lp-cta {
-  padding: 3rem 0;
-  background-color: var(--c-secondary);
-  overflow: hidden;
   position: relative;
+  padding: 3rem 0;
+  overflow: hidden;
+  background-color: var(--c-secondary);
 }
 
 .lp-cta.lp-border {
   border: none;
 }
-.lp-cta > div {
-  display: flex;
-}
 
 .lp-cta__left {
-  max-width: 66ch;
-  padding-bottom: 1rem;
-  width: 50%;
+  max-width: var(--content);
   padding-right: 2rem;
+  padding-bottom: 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+@media (min-width: 576px) {
+  .lp-cta__left {
+    width: 50%;
+  }
 }
 
 .lp-cta__left a {
   display: inline-block;
   margin-top: 1rem;
   font-weight: 700;
-  color: var(--c-lightest);
   letter-spacing: 0.2px;
+  color: var(--c-dark);
   background-color: var(--c-secondary-dark);
+  font-family: var(--f-system);
+  text-transform: uppercase;
 }
 
 .lp-cta__left a:hover {
-  background-color: var(--c-darkest);
+  background-color: var(--c-secondary-light);
 }
 
 .lp-cta__right {
-  overflow: hidden;
+  position: absolute;
+  right: 0;
   display: flex;
   flex-wrap: wrap;
+  transform: translate(60%, -30%) rotate(-15deg);
   gap: 1rem;
-  width: 50%;
-transform: rotate(-35deg) ;
-position: absolute;
-transform-origin: top;
-right: 3rem;
-top: 0;
+  z-index: 0;
 }
 
 .lp-cta__right p {
-  font-size: 2.75rem;
-  background-color: var(--c-secondary-dark);
-  font-weight: 900;
+  padding: var(--button-padding-y) var(--button-padding-x);
   font-family: var(--c-heading);
-  opacity: .15;
-border-radius: var(--radius);
-padding: var(--button-padding-y) var(--button-padding-x);
-white-space: nowrap;
-color: var(--c-secondary);
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: var(--c-secondary);
+  white-space: nowrap;
+  background-color: var(--c-secondary-dark);
+  border-radius: var(--radius);
+  opacity: 0.35;
+  flex-basis: max-content;
 }

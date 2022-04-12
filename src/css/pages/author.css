@@ -1,17 +1,17 @@
 .lp-author__header {
-  row-gap: 1rem;
-  text-align: center;
-  margin: 1.5em 0;
   align-items: center;
   padding-bottom: 1rem;
+  margin: 1.5em 0;
+  text-align: center;
+  row-gap: 1rem;
 }
 
 .lp-author__profile {
-  height: 8rem;
   width: 8rem;
-  object-fit: cover;
-  border-radius: 50%;
+  height: 8rem;
   margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .lp-author__header h1 {
@@ -21,24 +21,24 @@
 .lp-author__location {
   display: inline-flex;
   align-items: center;
-  color: var(--c-dark);
   justify-content: center;
+  color: var(--c-dark);
 }
 
 .lp-author__location svg {
-  height: 1em;
-  width: 1em;
   display: inline-block;
+  width: 1em;
+  height: 1em;
   margin-right: var(--icon-right);
 }
 
 .lp-author__social {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin: 0 auto;
   align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
   line-height: 1;
+  gap: 1rem;
 }
 
 .lp-author__social a {
@@ -52,31 +52,31 @@
 }
 
 .lp-author__social svg {
+  display: inline-block;
   width: 1.75rem;
   height: 1.75rem;
-  display: inline-block;
   color: inherit;
 }
 
 .lp-author__bio {
+  max-width: var(--content);
+  margin: 1rem auto;
   font-size: 1.25rem;
   font-style: italic;
-  margin: 1rem auto;
-  max-width: var(--content);
 }
 
 .lp-author__cover-image {
   max-width: var(--content);
   padding: 0.5rem;
-  border-radius: var(--radius-small);
-  border-style: solid;
   margin: 0 auto;
+  border-style: solid;
+  border-radius: var(--radius-small);
 }
 
 .lp-author__cover-image img {
+  display: block;
   width: 100%;
   border-radius: var(--radius-small);
-  display: block;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }

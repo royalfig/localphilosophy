@@ -1,9 +1,8 @@
 /* Add footer styles here */
 .lp-footer {
-  background-color: var(--c-darkest);
+  padding: 2rem 0 1rem;
   color: var(--c-light);
-  padding: 2rem 0;
-
+  background-color: var(--c-darkest);
 }
 
 .lp-footer a {
@@ -26,7 +25,6 @@
   font-size: var(--small);
   color: inherit;
   color: var(--c-light);
-
 }
 
 .lp-footer__column:first-of-type p:first-child {

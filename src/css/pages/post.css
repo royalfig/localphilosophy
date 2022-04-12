@@ -52,10 +52,10 @@
 }
 
 .lp-post__header h1 {
+  max-width: 80%;
   margin: 2rem auto 0;
   font-size: 2.25rem;
   text-align: center;
-  max-width: 80%;
 }
 
 .post-template .lp-post__header h1 {
@@ -83,15 +83,15 @@
 
 .lp-post__meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  column-gap: var(--gap);
+  font-family: var(--f-system);
   font-size: var(--smaller);
   color: var(--c-lighter);
-  font-family: var(--f-system);
   text-transform: uppercase;
-  column-gap: var(--gap);
-  row-gap: .5em;
-  flex-wrap: wrap;
+  row-gap: 0.5em;
 }
 
 .lp-post__meta a,
@@ -109,10 +109,10 @@
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+  text-transform: inherit;
   cursor: pointer;
   background: none;
   border: none;
-  text-transform: inherit;
 }
 
 .lp-post__meta a:hover,
@@ -193,12 +193,12 @@
   align-items: center;
   justify-content: center;
   padding: var(--button-padding);
+  padding: var(--button-padding-y) var(--button-padding-x);
   font-size: var(--small);
   color: var(--c-dark);
   text-align: center;
   background-color: var(--c-light);
   border-radius: var(--radius-small);
-  padding: var(--button-padding-y) var(--button-padding-x);
 }
 
 .lp-post__caption svg {

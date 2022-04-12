@@ -1,16 +1,16 @@
 .lp-badge {
   display: inline-block;
   padding: var(--button-padding-y) var(--button-padding-x);
+  font-family: var(--f-system);
   font-size: var(--smallest);
   /* line-height: 1; */
   color: var(--c-lightest);
-  border: 1px solid;
   text-decoration: none;
-  border-radius: var(--radius-small);
-  transition: background-color var(--transition);
-  font-family: var(--f-system);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
+  border: 1px solid;
+  border-radius: var(--radius-small);
+  transition: background-color var(--transition);
   transition: var(--transition);
 }
 

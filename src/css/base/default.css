@@ -3,10 +3,10 @@ html {
   font-size: 1.0625rem;
   font-size: clamp(1.0625rem, 0.9553571428571429rem + 0.2976190476190476vw, 1.3125rem);
   line-height: 1.5;
+  color: var(--c-darkest);
+  background-color: var(--c-lightest);
   scroll-behavior: smooth;
   text-rendering: optimizelegibility;
-  background-color: var(--c-lightest);
-  color: var(--c-darkest);
   /* 
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -32,6 +32,6 @@ main {
 }
 
 ::selection {
-  background-color: var(--c-secondary-light);
   color: var(--c-darkest);
+  background-color: var(--c-secondary-light);
 }
