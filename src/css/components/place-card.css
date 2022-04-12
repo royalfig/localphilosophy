@@ -1,3 +1,11 @@
+.lp-places__card-container {
+  padding: 2rem 0;
+}
+
+.lp-places__card-container h2 {
+  margin: 0;
+}
+
 .lp-places-container {
   display: grid;
   gap: 1rem;

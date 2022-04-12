@@ -27,11 +27,19 @@
   color: var(--c-light);
 }
 
+.lp-footer__column > *:first-child {
+  margin-bottom: 0.25em;
+}
+
 .lp-footer__column:first-of-type p:first-child {
-  margin-bottom: 0.25rem;
   font-family: var(--f-logo);
   font-style: italic;
   font-weight: 900;
+}
+
+.lp-footer__link {
+  display: inline-block;
+  margin-top: 0.5em;
 }
 
 .lp-copyright {

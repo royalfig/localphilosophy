@@ -4,14 +4,14 @@
   --f-heading: 'Playfair Display', serif;
   --f-body: 'Lora', serif;
   --f-logo: 'Playfair Display';
-  
+
   --h1: 2rem;
   --h2: 1.7411rem;
   --h3: 1.5157rem;
   --h4: 1.3195rem;
   --h5: 1.1487rem;
   --h6: 1rem;
-  
+
   --small: 0.833rem;
   --smaller: 0.694rem;
   --smallest: 0.579rem;
@@ -42,13 +42,9 @@
   --c-darker: hsl(15, 6%, 18%);
   --c-dark: hsl(15, 6%, 22%);
 
-  --c-lightest: hsl(15, 100%, 98%);
-  --c-lighter: hsl(15, 100%, 96%);
-  --c-light: hsl(15, 100%, 92%);
-  
-
-
-
+  --c-lightest: hsl(15, 30%, 98%);
+  --c-lighter: hsl(15, 30%, 96%);
+  --c-light: hsl(15, 30%, 92%);
 
   --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   /* 
@@ -71,8 +67,6 @@
     --gap: 2rem;
   }
 }
-
-
 
 @media (min-height: 1000px) {
   :root {
