@@ -1,13 +1,14 @@
 /* Home cards */
 .lp-home-card-container,
- .lp-post_related {
+ .lp-post_related, .lp-places-container {
   display: grid;
   padding: 1rem 1rem 1rem 0;
   margin-bottom: 1rem;
   overflow-x: scroll;
   grid-auto-flow: column;
-  grid-auto-columns: auto;
+  grid-auto-columns: max-content;
   gap: 1rem;
+  grid-column: 3 / -1;
 }
 
 .lp-home-card-container::-webkit-scrollbar-track {
@@ -28,7 +29,6 @@
 
 .lp-home-card {
   position: relative;
-  flex-shrink: 0;
   height: calc((100vh - (var(--navbar-height) + 4rem)) * var(--card-height));
   padding: var(--card-padding);
   background-repeat: no-repeat;
@@ -36,6 +36,8 @@
   border-radius: var(--radius-small);
   transition: filter var(--transition);
   aspect-ratio: 4 / 3;
+  width: 100%;
+  scroll-padding-inline: 1rem;
 }
 
 .lp-home-card section {
@@ -54,7 +56,7 @@
   left: 0;
   overflow: hidden;
   content: '';
-  background-color: rgba(0 0 0 / 0.75);
+  background-color: rgba(0 0 0 / 0.5);
   border-radius: var(--radius-small);
 }
 
@@ -80,7 +82,7 @@
 }
 
 .lp-current-card::after {
-  border-color: transparent transparent var(--c-lightest) transparent;
+  border-color: transparent transparent var(--c-light) transparent;
 }
 
 .lp-home-card > section {

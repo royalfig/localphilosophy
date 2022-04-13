@@ -88,7 +88,7 @@
   overflow: hidden;
   color: var(--c-darkest);
   border-radius: var(--radius-small);
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  box-shadow: var(--shadow);
 }
 
 .leaflet-popup-content {
@@ -185,16 +185,17 @@ span.lp-coming-soon {
 /* Tag styles */
 .lp-place-name {
   position: absolute;
-  right: 0;
+  left: 0;
   z-index: 1000;
-  margin-top: 1rem;
+  bottom: 1rem;
+  border-radius: var(--radius-small) 0 0 var(--radius-small);
 }
 
 .lp-place-name h1 {
   padding: 0.5rem;
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1;
   color: var(--c-dark);
-  background-color: var(--c-lightest);
+  background-color: var(--c-light);
 }

@@ -6,21 +6,15 @@
   margin: 0;
 }
 
-.lp-places-container {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  padding: 1rem 0;
-}
-
 .lp-place-card {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  height: calc((100vh - (var(--navbar-height) + 4rem)) * var(--card-height));
+  aspect-ratio: 4 / 3;
 
   color: #fff;
   border-radius: var(--radius-small);
-  aspect-ratio: 1 / 1.15;
 }
 
 .lp-place-card img {

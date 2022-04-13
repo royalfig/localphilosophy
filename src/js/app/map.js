@@ -1,6 +1,9 @@
 import posts from './api';
 import * as L from 'leaflet/dist/leaflet-src.esm';
-import { PosAnimation } from 'leaflet';
+
+const STYLE = "cl1wfg8n8000015mpmwg2cdvw"
+  const ACCESS = "pk.eyJ1Ijoicm95YWxmaWciLCJhIjoiY2t6M2Z2NzdpMDZlODJwbXpxbWF3ZWRybCJ9._5YW-t0-6Nfn_fav0TO8eg"
+  const MAPBOX = `https://api.mapbox.com/styles/v1/royalfig/${STYLE}/tiles/{z}/{x}/{y}?access_token=${ACCESS}`
 
 const getMapIconUrl = () => {
   const mapPin = document.querySelector('[data-map-pin]');
@@ -29,7 +32,7 @@ function createAuthorMarkup(authors) {
 
 function createFeatureImageSize(featureImageUrl) {
   const [domain, image] = featureImageUrl.split('images');
-  return domain + 'images/size/w300' + image;
+  return domain + 'images/size/w500' + image;
 }
 
 function isInViewport(popup, card, cardContainer) {
@@ -48,11 +51,7 @@ function isInViewport(popup, card, cardContainer) {
   console.log(popup.getBoundingClientRect(), card.getBoundingClientRect());
 
   card.scrollIntoView(false);
-  // if (cardLeft + cardAttributes.width > clientWidth) {
-  //   cardContainer.scrollBy(clientWidth - cardLeft + cardAttributes.width, 0);
-  // } else {
-  //   cardContainer.scrollBy(0, 0);
-  // }
+
 }
 
 // http://localhost:2368/content/images/size/w1000/2022/03/brooklyn-street-art-chip-thomas-arizona-11-20-web-1.jpg
@@ -63,7 +62,6 @@ function createMultiLocationMap() {
   let markers = [];
 
   function setCurrent(id) {
-    console.log(id);
     if (!id) {
       current && current.classList.remove('lp-current-card');
       current = id;
@@ -112,20 +110,16 @@ function createMultiLocationMap() {
       };
     });
 
-    const map = L.map('map').setView(mapData[0].coords, 15);
+    const map = L.map('map').setView(mapData[0].coords, 14);
 
     map.on('click', () => {
       setCurrent(null);
     });
 
-    const ACCESS_TOKEN =
-      'pk.eyJ1Ijoicm95YWxmaWciLCJhIjoiY2t6M2Z2NzdpMDZlODJwbXpxbWF3ZWRybCJ9._5YW-t0-6Nfn_fav0TO8eg';
-
     L.tileLayer(
-      `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${ACCESS_TOKEN}`,
+      MAPBOX,
       {
-        maxZoom: 18,
-        id: 'mapbox/cjerxnqt3cgvp2rmyuxbeqme7',
+        maxZoom: 19,
         tileSize: 512,
         zoomOffset: -1,
       },
@@ -148,7 +142,7 @@ function createMultiLocationMap() {
       m.bindPopup(
         `<div class="lp-popup-content">
       <figure class="lp-popup-figure">
-        <img src="${location.feature_image}" alt="">
+        <img src="${createFeatureImageSize(location.feature_image)}" alt="${location.title}">
       </figure>
       <div class="lp-popup-text">
         <h2>${location.title}</h2>
@@ -194,17 +188,13 @@ function createSingleLocationMap() {
   const mapData = document.getElementById('lp-post-map');
   const { gc } = mapData.dataset;
   const coords = parseLocation(gc);
-  console.log(coords);
-  const map = L.map('lp-post-map').setView(coords, 15);
-
-  const ACCESS_TOKEN =
-    'pk.eyJ1Ijoicm95YWxmaWciLCJhIjoiY2t6M2Z2NzdpMDZlODJwbXpxbWF3ZWRybCJ9._5YW-t0-6Nfn_fav0TO8eg';
-
-  L.tileLayer(
-    `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${ACCESS_TOKEN}`,
+  const map = L.map('lp-post-map').setView(coords, 16);
+  
+  
+    L.tileLayer(
+    MAPBOX,
     {
-      maxZoom: 18,
-      id: 'mapbox/cjerxnqt3cgvp2rmyuxbeqme7',
+      maxZoom: 21,
       tileSize: 512,
       zoomOffset: -1,
     },
