@@ -29,7 +29,7 @@
 
 .lp-home-card {
   position: relative;
-  height: calc((100vh - (var(--navbar-height) + 4rem)) * var(--card-height));
+  height: calc((100vh - (var(--navbar-height) + 5rem)) * var(--card-height));
   padding: var(--card-padding);
   background-repeat: no-repeat;
   background-size: cover;
