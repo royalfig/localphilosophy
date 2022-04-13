@@ -1,6 +1,7 @@
 /* Home cards */
 .lp-home-card-container,
- .lp-post_related, .lp-places-container {
+ .lp-post_related,
+ .lp-places-container {
   display: grid;
   padding: 1rem 1rem 1rem 0;
   margin-bottom: 1rem;
@@ -29,6 +30,7 @@
 
 .lp-home-card {
   position: relative;
+  width: 100%;
   height: calc((100vh - (var(--navbar-height) + 5rem)) * var(--card-height));
   padding: var(--card-padding);
   background-repeat: no-repeat;
@@ -36,7 +38,6 @@
   border-radius: var(--radius-small);
   transition: filter var(--transition);
   aspect-ratio: 4 / 3;
-  width: 100%;
   scroll-padding-inline: 1rem;
 }
 

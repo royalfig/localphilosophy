@@ -10,11 +10,11 @@
 }
 
 .lp-cta__left {
+  position: relative;
+  z-index: 1;
   max-width: var(--content);
   padding-right: 2rem;
   padding-bottom: 1rem;
-  z-index: 1;
-  position: relative;
 }
 
 @media (min-width: 576px) {
@@ -26,12 +26,12 @@
 .lp-cta__left a {
   display: inline-block;
   margin-top: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  color: var(--c-dark);
-  background-color: var(--c-secondary-dark);
   font-family: var(--f-system);
+  font-weight: 700;
+  color: var(--c-dark);
   text-transform: uppercase;
+  letter-spacing: 0.2px;
+  background-color: var(--c-secondary-dark);
 }
 
 .lp-cta__left a:hover {
@@ -41,14 +41,15 @@
 .lp-cta__right {
   position: absolute;
   right: 0;
+  z-index: 0;
   display: flex;
   flex-wrap: wrap;
   transform: translate(60%, -30%) rotate(-15deg);
   gap: 1rem;
-  z-index: 0;
 }
 
 .lp-cta__right p {
+  flex-basis: max-content;
   padding: var(--button-padding-y) var(--button-padding-x);
   font-family: var(--c-heading);
   font-size: 2.75rem;
@@ -58,5 +59,4 @@
   background-color: var(--c-secondary-dark);
   border-radius: var(--radius);
   opacity: 0.35;
-  flex-basis: max-content;
 }

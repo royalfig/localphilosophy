@@ -52,8 +52,8 @@
 }
 
 .lp-post__header h1 {
-  margin: 2rem auto 0;
   max-width: 60rem;
+  margin: 2rem auto 0;
   font-size: 2.25rem;
   text-align: center;
 }
