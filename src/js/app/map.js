@@ -96,6 +96,7 @@ function createMultiLocationMap() {
       const [location, gc] = tags;
 
       const coords = parseLocation(gc.name);
+      
       return {
         title,
         url,
