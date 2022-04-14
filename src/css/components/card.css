@@ -38,7 +38,7 @@
   transition: filter var(--transition);
   aspect-ratio: 4 / 3;
   scroll-padding-inline: 1rem;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .lp-home-card section {

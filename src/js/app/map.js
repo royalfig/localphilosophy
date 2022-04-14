@@ -39,40 +39,9 @@ function createMultiLocationMap() {
   // If no cardContainer available, abort
   if (!cardContainer) return;
 
-  // posts.then((data) => {
-  //   const mapData = data.map((postData) => {
-  //     const {
-  //       title,
-  //       url,
-  //       feature_image,
-  //       id,
-  //       published_at,
-  //       authors,
-  //       tags,
-  //       slug,
-  //     } = postData;
-
-  //     const [location, gc] = tags;
-
-  //     const coords = parseLocation(gc.name);
-
-  //     return {
-  //       title,
-  //       url,
-  //       feature_image,
-  //       id,
-  //       published_at,
-  //       authors,
-  //       location_name: location.name,
-  //       location_slug: location.url,
-  //       coords,
-  //       slug,
-  //     };
-  //   });
-  console.log(postsForMap);
   const coords = parseLocation(postsForMap[0].gc);
 
-  const map = L.map('map').setView(coords, 14);
+  const map = L.map('map').setView(coords, 11);
 
   map.on('click', () => {
     setCurrent(null);
@@ -93,7 +62,14 @@ function createMultiLocationMap() {
     shadowAnchor: [15, 10],
   });
 
-  const width = document.documentElement.clientWidth > 500 ? 400 : 300;
+  const widths = () => {
+    const clientWidth = document.documentElement.clientWidth;
+
+    return {
+      max: clientWidth > 550 ? 500 : 300,
+      min: clientWidth < 300 ? clientWidth - 40 : 300,
+    };
+  };
 
   postsForMap.forEach((pin, idx) => {
     const authors = createAuthorMarkup(pin.authors);
@@ -115,7 +91,12 @@ function createMultiLocationMap() {
         </div>
       </div>
       </div>`,
-      { maxWidth: width, closeButton: false, id: pin.slug },
+      {
+        maxWidth: widths().max,
+        minWidth: widths().min,
+        closeButton: false,
+        id: pin.slug,
+      },
     );
     markers.push(m);
 
@@ -168,16 +149,6 @@ function createSingleLocationMap() {
   });
 
   const m = L.marker(coords, { icon: mapIcon }).addTo(map);
-}
-
-/*
-  type = single, multi
-  filter = value to filter out
-*/
-
-function createMap(type) {
-  if (type === 'single') {
-  }
 }
 
 export { createMultiLocationMap, createSingleLocationMap };

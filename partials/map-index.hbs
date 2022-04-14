@@ -8,9 +8,7 @@
     feature_image: "{{feature_image}}",
     location: "{{primary_tag.name}}",
     gc: "{{tags.[1].name}}",
-    authors: [{name: "{{primary_author.name}}", profile_image: "{{primary_author.profile_image}}"},],
-    author2: "{{authors.[1].name}}",
-    author2Image: "{{authors.[1].profile_image}}",
+    authors: [{name: "{{primary_author.name}}", profile_image: "{{primary_author.profile_image}}"},{name: "{{authors.[1].name}}", profile_image: "{{authors.[1].profile_image}}"}],
     published_at: "{{published_at}}"},
   {{/foreach}}]
   </script>
