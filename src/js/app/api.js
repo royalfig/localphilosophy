@@ -9,6 +9,7 @@ const api = new GhostContentAPI({
 const posts = api.posts.browse({
   include: 'tags,authors',
   formats: 'plaintext',
+  limit: 'all',
 });
 
 export default posts;

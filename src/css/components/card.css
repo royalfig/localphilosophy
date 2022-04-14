@@ -1,7 +1,7 @@
 /* Home cards */
 .lp-home-card-container,
- .lp-post_related,
- .lp-places-container {
+.lp-post_related,
+.lp-places-container {
   display: grid;
   padding: 1rem 1rem 1rem 0;
   margin-bottom: 1rem;
@@ -25,8 +25,7 @@
   background-color: var(--c-light);
 }
 
-.lp-home-card-container--inner {
-}
+.lp-home-card-container--inner {}
 
 .lp-home-card {
   position: relative;
@@ -39,9 +38,11 @@
   transition: filter var(--transition);
   aspect-ratio: 4 / 3;
   scroll-padding-inline: 1rem;
+  overflow: hidden;
 }
 
 .lp-home-card section {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -49,7 +50,7 @@
   transition: border-color var(--transition);
 }
 
-.lp-home-card::before {
+.lp-home-card::after {
   position: absolute;
   top: 0;
   right: 0;
@@ -57,20 +58,35 @@
   left: 0;
   overflow: hidden;
   content: '';
-  background-color: rgba(0 0 0 / 0.5);
+  background-color: rgba(0 0 0 / 0.65);
   border-radius: var(--radius-small);
+  transition: background-color var(--transition);
 }
 
+.lp-home-card:hover::after {
+  background-color: rgba(0 0 0 / 0.5);
+}
+
+.lp-home-card>img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 
 .lp-current-card {
   filter: saturation(1);
 }
 
-.lp-current-card::before {
+.lp-current-card::after {
   background-color: rgba(0 0 0 / 0.85);
   background-image: none;
-}
+} */
 
-.lp-current-card::after {
+.lp-current-card::before {
   position: absolute;
   top: -1rem;
   left: 50%;
@@ -82,11 +98,11 @@
   transform: translate(-50%, -50%);
 }
 
-.lp-current-card::after {
+.lp-current-card::before {
   border-color: transparent transparent var(--c-light) transparent;
 }
 
-.lp-home-card > section {
+.lp-home-card>section {
   position: relative;
 }
 
@@ -114,8 +130,7 @@
 /* Interactivity */
 .lp-current-card {
   /* border: 5px solid var(--c-primary); */
-  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.15))
-    drop-shadow(0 2px 2px rgb(0 0 0 / 0.13));
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.15)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.13));
 }
 
 .lp-current-card .lp-home-card--front {
@@ -147,11 +162,11 @@
   -webkit-box-orient: vertical;
 }
 
-.lp-home-card--back > *:first-child {
+.lp-home-card--back>*:first-child {
   margin: 0;
 }
 
-.lp-home-card--back > *:last-child {
+.lp-home-card--back>*:last-child {
   align-self: flex-start;
   margin: 0;
 }

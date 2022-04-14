@@ -1,7 +1,20 @@
 {{#contentFor 'scripts'}}
-
+  <script>
+  const postsForMap = [
+  {{#foreach posts}}
+    {title: "{{title}}",
+    url: "{{url}}",
+    slug: "{{slug}}",
+    feature_image: "{{feature_image}}",
+    location: "{{primary_tag.name}}",
+    gc: "{{tags.[1].name}}",
+    authors: [{name: "{{primary_author.name}}", profile_image: "{{primary_author.profile_image}}"},],
+    author2: "{{authors.[1].name}}",
+    author2Image: "{{authors.[1].profile_image}}",
+    published_at: "{{published_at}}"},
+  {{/foreach}}]
+  </script>
 {{/contentFor}}
-
 
 <section class='lp-home-map-wrapper lp-border lp-border-bottom grid'>
   <div class='lp-home-map' id='map'></div>
@@ -24,19 +37,24 @@
 
 <section class="grid lp-border-bottom lp-border lp-places__card-container">
   <h2>Places</h2>
-  
-    <div class="lp-places-container">
-        {{#get "tags" include="count.posts" order="count.posts desc"}}
+  <div class="lp-places-container">
+    {{^is "tag"}}
+      {{#get "tags" include="count.posts" order="count.posts desc"}}
+          {{#foreach tags}}
+              {{> "place-card"}}
+          {{/foreach}}
+      {{/get}}
+    {{else}}
+      {{#tag}}
+        {{#get "tags" include="count.posts" order="count.posts desc" filter="slug:-{{slug}}"}}
             {{#foreach tags}}
                 {{> "place-card"}}
             {{/foreach}}
         {{/get}}
-    
-</div>
+      {{/tag}}
+    {{/is}}
   </div>
- 
 </section>
-
 
 {{#contentFor 'foot'}}
 

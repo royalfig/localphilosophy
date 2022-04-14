@@ -9,7 +9,7 @@
 .lp-place-card {
   position: relative;
   z-index: 1;
-  height: calc((100vh - (var(--navbar-height) + 4rem)) * var(--card-height));
+  height: calc((100vh - (var(--navbar-height) + 5rem)) * var(--card-height));
   overflow: hidden;
 
   color: #fff;
@@ -29,7 +29,7 @@
   transform: scale(115%);
 }
 
-.lp-place-card > * {
+.lp-place-card>* {
   position: relative;
 }
 

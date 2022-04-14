@@ -17,6 +17,7 @@
 
 .lp-popup-content {
   display: flex;
+  min-width: 250px;
 }
 
 .lp-popup-text {
@@ -24,6 +25,7 @@
   padding: 1rem;
   /* flex: 1; */
 }
+
 .lp-popup-content h2 {
   margin: 0;
   font-size: 1.125rem;
