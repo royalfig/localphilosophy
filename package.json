@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Local Philosophy",
   "engines": {
-    "ghost": ">=4.0.0",
-    "ghost-api": "v4"
+    "ghost": ">=4.0.0"
   },
   "main": "'src/index.js'",
   "scripts": {
@@ -26,6 +25,11 @@
   },
   "license": "MIT",
   "config": {
+    "card_assets": {
+      "exclude": [
+        "bookmark"
+      ]
+    },
     "posts_per_page": 15,
     "image_sizes": {
       "xxs": {

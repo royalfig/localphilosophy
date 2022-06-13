@@ -41,7 +41,7 @@ function createMultiLocationMap() {
 
   const coords = parseLocation(postsForMap[0].gc);
 
-  const map = L.map('map').setView(coords, 11);
+  const map = L.map('map').setView(coords, 4);
 
   map.on('click', () => {
     setCurrent(null);
@@ -99,10 +99,10 @@ function createMultiLocationMap() {
       },
     );
     markers.push(m);
-
+console.log(location)
     if (idx === 0) {
       m.openPopup();
-      setCurrent(location.slug);
+      setCurrent(pin.slug);
     }
 
     m.on('popupopen', (e) => {

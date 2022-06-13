@@ -8,10 +8,7 @@
   pointer-events: none;
   background-color: rgba(0 0 0 / 0.95);
   opacity: 0;
-  transition: opacity 0.4s ease 0.1s;
-}
-
-.lp-overlay .lp-button {
+  transition: opacity 0.3s;
 }
 
 .lp-overlay .lp-button--icon svg {
@@ -23,11 +20,12 @@
 
 .lp-menu {
   width: 100%;
+  max-width: 750px;
   height: 100%;
   padding: var(--gap) 0;
   overflow-y: auto;
   background-color: var(--c-lightest);
-  transition: transform 0.2s ease-out 0s;
+  transition: transform 0.2s ease-out;
   transform: translateX(-100%);
 }
 
@@ -64,11 +62,14 @@
 .lp-overlay[aria-expanded='true'] {
   pointer-events: all;
   opacity: 1;
-  transition: opacity 0.4s ease 0s;
+  transition: opacity 0.3s;
+  /* transition: opacity 4s ease 0s; */
 }
 
 .lp-overlay[aria-expanded='true'] .lp-menu {
-  transition: transform 0.2s ease-in 0.1s;
+  /* transition: transform 2s ease-in 1s; */
+  transition: transform 0.2s ease-in;
+
   transform: translateX(0);
 }
 

@@ -28,9 +28,9 @@
   --content: 52ch;
   --map-height: 0.6;
   --card-height: 0.4;
-  --navbar-height: 3.25rem;
+  --navbar-height: 6.25rem;
 
-  --c-primary: #62b5c6;
+  --c-primary: hsl(190, 47%, 58%);
   --c-primary-light: hsl(190, 47%, 68%);
   --c-primary-dark: hsl(189, 47%, 48%);
 

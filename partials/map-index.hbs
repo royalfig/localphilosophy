@@ -54,6 +54,38 @@
   </div>
 </section>
 
+{{#is "home"}}
+<section class="grid lp-featured lp-border-bottom lp-border">
+  <h2>Featured Posts</h2>
+  <div class="lp-featured-grid">
+  {{#foreach posts limit="6"}}
+    <article class="lp-featured-card">
+      <header>
+        <a href="{{url}}"> <img
+             srcset="{{img_url feature_image size="s"}} 300w,
+            {{img_url feature_image size="m"}} 500w,
+            {{img_url feature_image size="l"}} 700w,
+            {{img_url feature_image size="xl"}} 1000w"
+            sizes="500px"
+            src="{{img_url feature_image size="l"}}"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+        /></a>
+      </header>  
+      <div class="lp-featured-body">
+         <p class="lp-badge">
+          {{primary_tag.name}}
+        </p>
+        <h3><a href="{{url}}">{{title}}</a></h3>
+        <div class="lp-featured-card-meta">
+        {{authors}}
+        </div>
+      </div>
+    </article>
+  {{/foreach}}
+  </div>
+</section>
+{{/is}}
+
 {{#contentFor 'foot'}}
 
 {{/contentFor}}
