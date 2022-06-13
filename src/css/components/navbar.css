@@ -21,12 +21,11 @@
   text-align: center;
 }
 
-
 .lp-site-logo {
   padding: 0.35rem;
   margin: 0;
   font-family: var(--f-logo);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 900;
   border: 1px solid var(--c-light);
 }
@@ -39,18 +38,18 @@
   z-index: 2;
   width: 1em;
   height: 1em;
-  transform: translateY(3px);
+  transform: translateY(0);
   fill: var(--c-secondary);
 }
 
 .lp-navbar__center span:first-of-type {
   display: inline-block;
-  transform: translateX(10px);
+  transform: translateX(0.3em);
 }
 
 .lp-navbar__center span:last-of-type {
   display: inline-block;
-  transform: translateX(-14px);
+  transform: translateX(-0.4em);
 }
 
 .lp-navbar__description {
@@ -75,7 +74,6 @@
   .lp-navbar__description {
     display: initial;
   }
-  
 }
 
 .post-template .lp-navbar__center a {
