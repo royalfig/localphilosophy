@@ -81,6 +81,6 @@
   "dependencies": {
     "@tryghost/content-api": "^1.7.2",
     "js-search": "^2.0.0",
-    "leaflet": "~1.6"
+    "leaflet": "~1.8.0"
   }
 }
