@@ -23,7 +23,7 @@
   }
 }
 
-.lp-cta__left a {
+.lp-cta__left .lp-button {
   display: inline-block;
   margin-top: 1rem;
   font-family: var(--f-system);
@@ -34,7 +34,7 @@
   background-color: var(--c-secondary-dark);
 }
 
-.lp-cta__left a:hover {
+.lp-cta__left .lp-button:hover {
   background-color: var(--c-secondary-light);
 }
 

@@ -11,6 +11,8 @@
     authors: [{name: "{{primary_author.name}}", profile_image: "{{primary_author.profile_image}}"},{name: "{{authors.[1].name}}", profile_image: "{{authors.[1].profile_image}}"}],
     published_at: "{{published_at}}"},
   {{/foreach}}]
+
+  {{#is "tag"}}let type = "tag"{{else}}let type = "post"{{/is}}
   </script>
 {{/contentFor}}
 
@@ -33,9 +35,10 @@
   </div>
 </section>
 
-<section class="grid lp-border-bottom lp-border lp-places__card-container">
+<section class="grid lp-border-bottom lp-border lp-featured">
   <h2>Places</h2>
-  <div class="lp-places-container">
+  <p>Our Ideas Come From Somewhere. Here Are Some Of The Places.</p>
+  <div class="lp-featured-grid">
     {{^is "tag"}}
       {{#get "tags" include="count.posts" order="count.posts desc"}}
           {{#foreach tags}}
@@ -55,10 +58,13 @@
 </section>
 
 {{#is "home"}}
+{{#get "posts" limit="6" include="tags,authors" filter="featured:true" as |featured|}}
+
+{{#if featured}}
 <section class="grid lp-featured lp-border-bottom lp-border">
   <h2>Featured Posts</h2>
   <div class="lp-featured-grid">
-  {{#foreach posts limit="6"}}
+  {{#foreach featured}}
     <article class="lp-featured-card">
       <header>
         <a href="{{url}}"> <img
@@ -84,6 +90,8 @@
   {{/foreach}}
   </div>
 </section>
+{{/if}}
+{{/get}}
 {{/is}}
 
 {{#contentFor 'foot'}}

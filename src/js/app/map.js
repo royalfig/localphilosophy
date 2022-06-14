@@ -40,8 +40,8 @@ function createMultiLocationMap() {
   if (!cardContainer) return;
 
   const coords = parseLocation(postsForMap[0].gc);
-
-  const map = L.map('map').setView(coords, 4);
+  const zoom = type === 'post' ? 4 : 10;
+  const map = L.map('map').setView(coords, zoom);
 
   map.on('click', () => {
     setCurrent(null);
@@ -99,7 +99,6 @@ function createMultiLocationMap() {
       },
     );
     markers.push(m);
-console.log(location)
     if (idx === 0) {
       m.openPopup();
       setCurrent(pin.slug);

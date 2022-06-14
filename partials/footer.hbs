@@ -1,28 +1,36 @@
-<footer class="lp-footer grid">
+<footer class='lp-footer grid'>
 
-    <div class="lp-footer__inner">
-        <div class="lp-footer__column">
-            <p><a href="{{@site.url}}">{{@site.title}}</a></p>
-            <p>Our ideas come from somewhere</p>
-            <p>Here are some of the places.</p>
-            <p><a class="lp-footer__link" href="#/portal">Subscribe &rarr;</a></p>
-        </div>
+  <div class='lp-footer__inner'>
+    <div class='lp-footer__column'>
+      <p><a href='{{@site.url}}'>{{@site.title}}</a></p>
+      <p>Our ideas come from somewhere</p>
+      <p>Here are some of the places.</p>
+      <p><a class='lp-footer__link' href='#/portal'>Subscribe &rarr;</a></p>
+    </div>
 
-        <div class="lp-footer__column">
-            <p><strong>Places</strong></p>
-            {{#get "tags" limit="4" include="count.posts" order="count.posts desc"}}
-                {{#foreach tags}}
-                <p><a href="{{url}}">{{name}}</a></p>
-                {{/foreach}}
-            {{/get}}
-            <p><a class="lp-footer__link" href="/places">More Places &rarr;</a></p>
-        </div>
+    <div class='lp-footer__column'>
+      <p><strong>Places</strong></p>
+      {{#get
+        'tags'
+        limit='4'
+        include='count.posts'
+        order='count.posts desc'
+        filter='visibility:public'
+      }}
+        {{log this}}
+        {{#foreach tags}}
+          <p><a href='{{url}}'>{{name}}</a></p>
+        {{/foreach}}
+      {{/get}}
+      <p><a class='lp-footer__link' href='/places'>More Places &rarr;</a></p>
+    </div>
 
-<div class="lp-footer__column">
-    <p>Map data &copy; <a
-  href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
-  contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a></p>
-</div>
-</div>
-<p class="lp-copyright">localphilosophy.org &copy; {{date format="YYYY"}}</p>
+    <div class='lp-footer__column'>
+      <p>Map data &copy;
+        <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a>
+        contributors, Imagery ©
+        <a href='https://www.mapbox.com/'>Mapbox</a></p>
+    </div>
+  </div>
+  <p class='lp-copyright'>localphilosophy.org &copy; {{date format='YYYY'}}</p>
 </footer>
