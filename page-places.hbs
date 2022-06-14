@@ -1,14 +1,14 @@
 {{!< default}}
 
 {{#post}}
-    <header class="lp-places-header grid lp-border lp-border-bottom">
+    <header class="lp-places-header grid ">
         <h1>{{title}}</h1>
         <p>{{content}}</p>
     </header>
 {{/post}}
 
-<div class="grid lp-border lp-border-bottom">
-    <div class="lp-places-container">
+<div class="grid ">
+    <div class=" lp-featured-grid">
         {{#get "tags" include="count.posts" order="count.posts desc"}}
             {{#foreach tags}}
                 {{> "place-card"}}

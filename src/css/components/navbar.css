@@ -44,12 +44,12 @@
 
 .lp-navbar__center span:first-of-type {
   display: inline-block;
-  transform: translateX(0.3em);
+  transform: translateX(0.25em);
 }
 
 .lp-navbar__center span:last-of-type {
   display: inline-block;
-  transform: translateX(-0.4em);
+  transform: translateX(-0.35em);
 }
 
 .lp-navbar__description {

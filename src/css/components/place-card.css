@@ -25,11 +25,15 @@
   object-fit: cover;
 }
 
+.lp-featured-grid .lp-place-card {
+  height: auto;
+}
+
 .lp-place-card:hover img {
   transform: scale(115%);
 }
 
-.lp-place-card>* {
+.lp-place-card > * {
   position: relative;
 }
 

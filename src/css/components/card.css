@@ -171,8 +171,9 @@
 
 /* Feature card */
 .lp-featured {
-  padding: 2rem;
+  padding: 2rem 0;
 }
+
 .lp-featured h3 {
   margin: 0;
 }

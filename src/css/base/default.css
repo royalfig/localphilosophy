@@ -1,7 +1,11 @@
 html {
   font-family: var(--f-body);
   font-size: 1.0625rem;
-  font-size: clamp(1.0625rem, 0.9553571428571429rem + 0.2976190476190476vw, 1.3125rem);
+  font-size: clamp(
+    1.0625rem,
+    0.9553571428571429rem + 0.2976190476190476vw,
+    1.3125rem
+  );
   line-height: 1.5;
   color: var(--c-darkest);
   background-color: var(--c-lightest);
@@ -20,7 +24,7 @@ body {
 }
 
 main {
-  min-height: calc(100vh - var(--navbar-height));
+  min-height: calc(75vh - var(--navbar-height));
 }
 
 .no-scroll {
