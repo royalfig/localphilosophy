@@ -1,17 +1,18 @@
 {{#contentFor 'scripts'}}
   <script>
+  {{#get "posts" include="authors,tags" limit="100" as |postsForMap| }}
   const postsForMap = [
-  {{#foreach posts}}
-    {title: "{{title}}",
-    url: "{{url}}",
-    slug: "{{slug}}",
-    feature_image: "{{feature_image}}",
-    location: "{{primary_tag.name}}",
-    gc: "{{tags.[1].name}}",
-    authors: [{name: "{{primary_author.name}}", profile_image: "{{primary_author.profile_image}}"},{name: "{{authors.[1].name}}", profile_image: "{{authors.[1].profile_image}}"}],
-    published_at: "{{published_at}}"},
-  {{/foreach}}]
-
+    {{#foreach postsForMap}}
+      {title: "{{title}}",
+      url: "{{url}}",
+      slug: "{{slug}}",
+      feature_image: "{{feature_image}}",
+      location: "{{primary_tag.name}}",
+      gc: "{{tags.[1].name}}",
+      authors: [{name: "{{primary_author.name}}", profile_image: "{{primary_author.profile_image}}"},{name: "{{authors.[1].name}}", profile_image: "{{authors.[1].profile_image}}"}],
+      published_at: "{{published_at}}"},
+      {{/foreach}}]
+  {{/get}}
   {{#is "tag"}}let type = "tag"{{else}}let type = "post"{{/is}}
   </script>
 {{/contentFor}}
@@ -27,10 +28,31 @@
   {{/is}}
 </section>
 
-<section class="grid lp-border-bottom lp-border">
-  <div class="lp-home-card-container">
+<section class="grid lp-featured lp-border-bottom lp-border">
+  <div class="lp-featured-grid">
   {{#foreach posts}}
-    {{> "card" home="true"}}
+    <article class="lp-featured-card">
+      <header>
+        <a href="{{url}}"> <img
+            srcset="{{img_url feature_image size="s"}} 300w,
+            {{img_url feature_image size="m"}} 500w,
+            {{img_url feature_image size="l"}} 700w,
+            {{img_url feature_image size="xl"}} 1000w"
+            sizes="500px"
+            src="{{img_url feature_image size="l"}}"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+        /></a>
+      </header>  
+      <div class="lp-featured-body">
+        <p class="lp-badge">
+          {{primary_tag.name}}
+        </p>
+        <h3><a href="{{url}}">{{title}}</a></h3>
+        <div class="lp-featured-card-meta">
+        {{authors}}
+        </div>
+      </div>
+    </article>
   {{/foreach}}
   </div>
 </section>
@@ -58,44 +80,40 @@
 </section>
 
 {{#is "home"}}
-{{#get "posts" limit="6" include="tags,authors" filter="featured:true" as |featured|}}
-
-{{#if featured}}
-<section class="grid lp-featured lp-border-bottom lp-border">
-  <h2>Featured Posts</h2>
-  <div class="lp-featured-grid">
-  {{#foreach featured}}
-    <article class="lp-featured-card">
-      <header>
-        <a href="{{url}}"> <img
-             srcset="{{img_url feature_image size="s"}} 300w,
-            {{img_url feature_image size="m"}} 500w,
-            {{img_url feature_image size="l"}} 700w,
-            {{img_url feature_image size="xl"}} 1000w"
-            sizes="500px"
-            src="{{img_url feature_image size="l"}}"
-            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-        /></a>
-      </header>  
-      <div class="lp-featured-body">
-         <p class="lp-badge">
-          {{primary_tag.name}}
-        </p>
-        <h3><a href="{{url}}">{{title}}</a></h3>
-        <div class="lp-featured-card-meta">
-        {{authors}}
+  {{#get "posts" limit="6" include="tags,authors" filter="featured:true" as |featured|}}
+    {{#if featured}}
+      <section class="grid lp-featured lp-border-bottom lp-border">
+        <h2>Featured Posts</h2>
+        <div class="lp-featured-grid">
+        {{#foreach featured}}
+          <article class="lp-featured-card">
+            <header>
+              <a href="{{url}}"> <img
+                  srcset="{{img_url feature_image size="s"}} 300w,
+                  {{img_url feature_image size="m"}} 500w,
+                  {{img_url feature_image size="l"}} 700w,
+                  {{img_url feature_image size="xl"}} 1000w"
+                  sizes="500px"
+                  src="{{img_url feature_image size="l"}}"
+                  alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+              /></a>
+            </header>  
+            <div class="lp-featured-body">
+              <p class="lp-badge">
+                {{primary_tag.name}}
+              </p>
+              <h3><a href="{{url}}">{{title}}</a></h3>
+              <div class="lp-featured-card-meta">
+              {{authors}}
+              </div>
+            </div>
+          </article>
+        {{/foreach}}
         </div>
-      </div>
-    </article>
-  {{/foreach}}
-  </div>
-</section>
-{{/if}}
-{{/get}}
+      </section>
+    {{/if}}
+  {{/get}}
 {{/is}}
 
-{{#contentFor 'foot'}}
-
-{{/contentFor}}
 
 

@@ -1,7 +1,6 @@
 import '../../css/app.css';
 import { createMultiLocationMap } from './map';
 import initOverlay from './overlay';
-import search from './search';
 
 // LiveReload server
 if (ENV === 'development') {
@@ -19,5 +18,3 @@ createMultiLocationMap();
 // Nav and search overlay
 initOverlay();
 
-// Search
-search();

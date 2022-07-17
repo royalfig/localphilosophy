@@ -26,8 +26,7 @@
 
   --width: 65rem;
   --content: 52ch;
-  --map-height: 0.6;
-  --card-height: 0.4;
+  --map-height: 1;
   --navbar-height: 6.25rem;
 
   --c-primary: hsl(190, 47%, 58%);
@@ -65,12 +64,5 @@
 @media (min-width: 768px) {
   :root {
     --gap: 2rem;
-  }
-}
-
-@media (min-height: 1000px) {
-  :root {
-    --map-height: 0.7;
-    --card-height: 0.3;
   }
 }

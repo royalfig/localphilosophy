@@ -16,7 +16,6 @@
 //   }
 // });
 function initOverlay() {
-  const searchButton = document.querySelector('#search-button');
   const menuButton = document.querySelector('#menu-button');
   const closeButtons = document.querySelectorAll('.lp-close-button');
 
@@ -39,23 +38,8 @@ function initOverlay() {
     });
   });
 
-  function findElement(srcButton) {
-    if (srcButton.id.startsWith('search')) {
-      return document.querySelector('#search');
-    }
-    return document.querySelector('#nav');
-  }
-
-  searchButton.addEventListener('click', (e) => {
-    const el = findElement(e.currentTarget);
-    el.setAttribute('aria-expanded', true);
-    document.body.classList.add('no-scroll');
-    const searchInput = el.querySelector('input');
-    searchInput.focus();
-  });
-
   menuButton.addEventListener('click', (e) => {
-    const el = findElement(e.currentTarget);
+    const el = document.querySelector('#nav');
     document.body.classList.add('no-scroll');
     el.setAttribute('aria-expanded', true);
     const firstFocusableEl = el.querySelector('a');
