@@ -186,7 +186,7 @@ span.lp-coming-soon {
 /* Tag styles */
 .lp-place-name {
   position: absolute;
-  bottom: 1rem;
+  bottom: 3rem;
   left: 0;
   z-index: 1000;
   border-radius: var(--radius-small) 0 0 var(--radius-small);

@@ -5,7 +5,6 @@ import {
   parseLocation,
   createAuthorMarkup,
   createFeatureImageSize,
-  isInViewport,
 } from './map-utilities';
 
 const STYLE = 'cl1wfg8n8000015mpmwg2cdvw';
@@ -16,6 +15,11 @@ const ACCESS =
 const MAPBOX = `https://api.mapbox.com/styles/v1/royalfig/${STYLE}/tiles/{z}/{x}/{y}?access_token=${ACCESS}`;
 
 function createMultiLocationMap() {
+  // eslint-disable-next-line no-undef
+  if (typeof postsForMap === 'undefined') {
+    return;
+  }
+  
   const markers = [];
   // eslint-disable-next-line no-undef
   const coords = parseLocation(postsForMap[0].gc);
@@ -46,6 +50,8 @@ function createMultiLocationMap() {
       min: clientWidth < 300 ? clientWidth - 40 : 300,
     };
   };
+
+  
 
   // eslint-disable-next-line no-undef
   postsForMap.forEach((pin, idx) => {
