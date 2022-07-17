@@ -31,6 +31,7 @@
 <section class="grid lp-featured lp-border-bottom lp-border">
   <div class="lp-featured-grid">
   {{#foreach posts}}
+    {{^if featured}}
     <article class="lp-featured-card">
       <header>
         <a href="{{url}}"> <img
@@ -53,6 +54,7 @@
         </div>
       </div>
     </article>
+    {{/if}}
   {{/foreach}}
   </div>
 </section>

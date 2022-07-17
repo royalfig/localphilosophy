@@ -7,8 +7,8 @@
 }
 
 .lp-home-map {
-  height: calc((100vh - (var(--navbar-height) + 5rem)) * var(--map-height));
-  margin: 1rem 0;
+  height: 60vh;
+  margin: 3rem 0;
 }
 
 .lp-home-map-right {
