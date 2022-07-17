@@ -14,28 +14,11 @@
       {{/is}}
 
       <p class="lp-navbar__description">{{@site.description}}</p>
-      {{! <p class='lp-local'>Local</p>
-
-      <div class='lp-logo-marker'>
-        <svg viewBox='0 0 24 24'><path
-            fill='none'
-            d='M0 0h24v24H0z'
-          ></path><path
-            d='M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z'
-          ></path></svg>
-      </div>
-
-      <p class='lp-philosophy'>Philosophy</p> }}
     </div>
-    {{!-- {{#is 'home'}}
-      <div class='lp-navbar__center--bottom'>
-        <p> Our ideas come from somewhere.</p><p>Here are some of the places.</p>
-      </div>
-    {{/is}} --}}
   </div>
 
   <div class='lp-navbar__right'>
-    <button class='lp-button lp-button--icon' id='search-button'><svg
+    <button class='lp-button lp-button--icon' id='search-button' data-ghost-search aria-label="search"><svg
         viewBox='0 0 24 24'
       ><path fill='none' d='M0 0h24v24H0z'></path><path
           d='M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z'
