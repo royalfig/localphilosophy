@@ -25,6 +25,7 @@ body {
 
 main {
   min-height: calc(75vh - var(--navbar-height));
+  padding-bottom: 2rem;
 }
 
 .no-scroll {

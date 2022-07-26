@@ -1,6 +1,7 @@
 {{#contentFor 'scripts'}}
   <script>
-  {{#get "posts" include="authors,tags" limit="100" as |postsForMap| }}
+  {{^is "tag"}}
+    {{#get "posts" include="authors,tags" limit="100" as |postsForMap| }}
   const postsForMap = [
     {{#foreach postsForMap}}
       {title: "{{title}}",
@@ -13,6 +14,19 @@
       published_at: "{{published_at}}"},
       {{/foreach}}]
   {{/get}}
+  {{else}}
+       const postsForMap = [
+    {{#foreach posts}}
+      {title: "{{title}}",
+      url: "{{url}}",
+      slug: "{{slug}}",
+      feature_image: "{{feature_image}}",
+      location: "{{primary_tag.name}}",
+      gc: "{{tags.[1].name}}",
+      authors: [{name: "{{primary_author.name}}", profile_image: "{{primary_author.profile_image}}"},{name: "{{authors.[1].name}}", profile_image: "{{authors.[1].profile_image}}"}],
+      published_at: "{{published_at}}"},
+      {{/foreach}}]
+  {{/is}}
   {{#is "tag"}}let type = "tag"{{else}}let type = "post"{{/is}}
   </script>
 {{/contentFor}}
@@ -28,64 +42,11 @@
   {{/is}}
 </section>
 
-<section class="grid lp-featured lp-border-bottom lp-border">
-  <div class="lp-featured-grid">
-  {{#foreach posts}}
-    {{^if featured}}
-    <article class="lp-featured-card">
-      <header>
-        <a href="{{url}}"> <img
-            srcset="{{img_url feature_image size="s"}} 300w,
-            {{img_url feature_image size="m"}} 500w,
-            {{img_url feature_image size="l"}} 700w,
-            {{img_url feature_image size="xl"}} 1000w"
-            sizes="500px"
-            src="{{img_url feature_image size="l"}}"
-            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-        /></a>
-      </header>  
-      <div class="lp-featured-body">
-        <p class="lp-badge">
-          {{primary_tag.name}}
-        </p>
-        <h3><a href="{{url}}">{{title}}</a></h3>
-        <div class="lp-featured-card-meta">
-        {{authors}}
-        </div>
-      </div>
-    </article>
-    {{/if}}
-  {{/foreach}}
-  </div>
-</section>
-
-<section class="grid lp-border-bottom lp-border lp-featured">
-  <h2>Places</h2>
-  <p>Our Ideas Come From Somewhere. Here Are Some Of The Places.</p>
-  <div class="lp-featured-grid">
-    {{^is "tag"}}
-      {{#get "tags" include="count.posts" order="count.posts desc"}}
-          {{#foreach tags}}
-              {{> "place-card"}}
-          {{/foreach}}
-      {{/get}}
-    {{else}}
-      {{#tag}}
-        {{#get "tags" include="count.posts" order="count.posts desc" filter="slug:-{{slug}}"}}
-            {{#foreach tags}}
-                {{> "place-card"}}
-            {{/foreach}}
-        {{/get}}
-      {{/tag}}
-    {{/is}}
-  </div>
-</section>
-
 {{#is "home"}}
   {{#get "posts" limit="6" include="tags,authors" filter="featured:true" as |featured|}}
     {{#if featured}}
       <section class="grid lp-featured lp-border-bottom lp-border">
-        <h2>Featured Posts</h2>
+        <h2>Featured Essays</h2>
         <div class="lp-featured-grid">
         {{#foreach featured}}
           <article class="lp-featured-card">
@@ -117,5 +78,92 @@
   {{/get}}
 {{/is}}
 
+{{#is "tag"}}
+<section class="grid lp-featured lp-border-bottom lp-border">
+   <h2>Latest Essays on {{#tag}}{{name}}{{/tag}}</h2>
+  <div class="lp-featured-grid">
+  {{#foreach posts}}
+    <article class="lp-featured-card">
+      <header>
+        <a href="{{url}}"> <img
+            srcset="{{img_url feature_image size="s"}} 300w,
+            {{img_url feature_image size="m"}} 500w,
+            {{img_url feature_image size="l"}} 700w,
+            {{img_url feature_image size="xl"}} 1000w"
+            sizes="500px"
+            src="{{img_url feature_image size="l"}}"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+        /></a>
+      </header>  
+      <div class="lp-featured-body">
+        <p class="lp-badge">
+          {{primary_tag.name}}
+        </p>
+        <h3><a href="{{url}}">{{title}}</a></h3>
+        <div class="lp-featured-card-meta">
+        {{authors}}
+        </div>
+      </div>
+    </article>
+  {{/foreach}}
+  </div>
+</section>
+{{/is}}
+
+<section class="grid lp-border-bottom lp-border lp-featured">
+  <h2>Places</h2>
+  <p>Our Ideas Come From Somewhere. Here Are Some Of The Places.</p>
+  <div class="lp-featured-grid">
+    {{^is "tag"}}
+      {{#get "tags" include="count.posts" order="count.posts desc"}}
+          {{#foreach tags}}
+              {{> "place-card"}}
+          {{/foreach}}
+      {{/get}}
+    {{else}}
+      {{#tag}}
+        {{#get "tags" include="count.posts" order="count.posts desc" filter="slug:-{{slug}}"}}
+            {{#foreach tags}}
+                {{> "place-card"}}
+            {{/foreach}}
+        {{/get}}
+      {{/tag}}
+    {{/is}}
+  </div>
+</section>
+
+{{^is "tag"}}
+<section class="grid lp-featured lp-border-bottom lp-border">
+   <h2>Latest Essays</h2>
+  <div class="lp-featured-grid">
+  {{#foreach posts}}
+    {{^if featured}}
+    <article class="lp-featured-card">
+      <header>
+        <a href="{{url}}"> <img
+            srcset="{{img_url feature_image size="s"}} 300w,
+            {{img_url feature_image size="m"}} 500w,
+            {{img_url feature_image size="l"}} 700w,
+            {{img_url feature_image size="xl"}} 1000w"
+            sizes="500px"
+            src="{{img_url feature_image size="l"}}"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+        /></a>
+      </header>  
+      <div class="lp-featured-body">
+        <p class="lp-badge">
+          {{primary_tag.name}}
+        </p>
+        <h3><a href="{{url}}">{{title}}</a></h3>
+        <div class="lp-featured-card-meta">
+        {{authors}}
+        </div>
+      </div>
+    </article>
+    {{/if}}
+  {{/foreach}}
+  </div>
+</section>
+{{/is}}
 
 
